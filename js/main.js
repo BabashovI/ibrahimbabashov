@@ -1,38 +1,32 @@
-// ibrahimbabashov.com — small helpers: theme toggle + mobile nav
+// ibrahimbabashov.com — theme, nav, reading progress, reveal animations
 
 (function () {
   "use strict";
 
-  // ---------- Theme (dark / light) ----------
   var root = document.documentElement;
+
+  // ---------- Theme (dark default) ----------
   var toggle = document.querySelector(".theme-toggle");
-  var storageKey = "theme";
 
-  function applyTheme(theme) {
-    root.setAttribute("data-theme", theme);
-    if (toggle) toggle.textContent = theme === "dark" ? "☀️" : "🌙";
+  function currentTheme() {
+    return root.getAttribute("data-theme") || "dark";
   }
 
-  // Respect saved preference, fall back to system preference.
-  var saved = null;
-  try {
-    saved = localStorage.getItem(storageKey);
-  } catch (e) {
-    /* storage unavailable — ignore */
+  function refreshToggle() {
+    if (toggle) toggle.textContent = currentTheme() === "dark" ? "☀️" : "🌙";
   }
-  var prefersDark = window.matchMedia
-    && window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-  applyTheme(saved || (prefersDark ? "dark" : "light"));
+  refreshToggle();
 
   if (toggle) {
     toggle.addEventListener("click", function () {
-      var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-      applyTheme(next);
+      var next = currentTheme() === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      refreshToggle();
       try {
-        localStorage.setItem(storageKey, next);
+        localStorage.setItem("theme", next);
       } catch (e) {
-        /* ignore */
+        /* storage unavailable — ignore */
       }
     });
   }
@@ -47,4 +41,47 @@
       navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
   }
+
+  // ---------- Reading progress (post pages) ----------
+  var bar = document.getElementById("progress-bar");
+
+  if (bar) {
+    var updateProgress = function () {
+      var doc = document.documentElement;
+      var max = doc.scrollHeight - window.innerHeight;
+      var pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+      bar.style.width = pct + "%";
+    };
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+    updateProgress();
+  }
+
+  // ---------- Reveal on scroll ----------
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+
+  if (revealEls.length && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08 }
+    );
+    revealEls.forEach(function (el) {
+      io.observe(el);
+    });
+  } else {
+    revealEls.forEach(function (el) {
+      el.classList.add("in");
+    });
+  }
+
+  // ---------- Footer year ----------
+  var year = document.getElementById("year");
+  if (year) year.textContent = String(new Date().getFullYear());
 })();

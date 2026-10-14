@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Ibrahim Babashov</title>
   <meta name="description" content="Get in touch with Ibrahim Babashov.">
+  <meta name="theme-color" content="#07090f">
+  <script>
+    (function () {
+      try {
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -17,11 +30,10 @@
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html" class="btn btn-sm" aria-current="page">Contact</a></li>
+        <li><a href="contact.html" class="btn btn-ghost btn-sm" aria-current="page">Contact</a></li>
         <li>
-          <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+          <button class="theme-toggle" aria-label="Toggle dark mode">☀️</button>
         </li>
       </ul>
     </nav>
@@ -29,23 +41,31 @@
 
   <main>
     <section class="page container">
+      <p class="mono" style="color: var(--accent-2);">~/contact</p>
       <h1>Contact</h1>
-      <p>Want to say hi, share feedback, or work on something together? My inbox is open.</p>
+      <p class="lead">
+        Want to say hi, share feedback, or correct something in the notes?
+        My inbox is open.
+      </p>
       <p>
         The fastest way to reach me is email:
         <a href="mailto:hello@ibrahimbabashov.com">hello@ibrahimbabashov.com</a>
       </p>
-      <p>You can also find me on <a href="https://github.com/" rel="noopener" target="_blank">GitHub</a> and <a href="https://www.linkedin.com/" rel="noopener" target="_blank">LinkedIn</a>.</p>
+      <p>
+        You can also find me on
+        <a href="https://github.com/" rel="noopener" target="_blank">GitHub</a> and
+        <a href="https://www.linkedin.com/" rel="noopener" target="_blank">LinkedIn</a>.
+      </p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2026 Ibrahim Babashov. Built by hand with plain HTML, CSS &amp; JS.</p>
+      <p>© <span id="year">2026</span> Ibrahim Babashov — hand-built with HTML, CSS &amp; JS.</p>
       <div class="footer-links">
-        <a href="mailto:hello@ibrahimbabashov.com">Email</a>
-        <a href="https://github.com/" rel="noopener" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/" rel="noopener" target="_blank">LinkedIn</a>
+        <a href="mailto:hello@ibrahimbabashov.com">email</a>
+        <a href="https://github.com/" rel="noopener" target="_blank">github</a>
+        <a href="https://www.linkedin.com/" rel="noopener" target="_blank">linkedin</a>
       </div>
     </div>
   </footer>

@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — Ibrahim Babashov</title>
-  <meta name="description" content="About Ibrahim Babashov.">
+  <meta name="description" content="About Ibrahim Babashov — Linux sysadmin & IT engineer. RHCSA, CCNA, LPIC 1, CompTIA A+ certified.">
+  <meta name="theme-color" content="#07090f">
+  <script>
+    (function () {
+      try {
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -17,11 +30,10 @@
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" aria-current="page">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html" class="btn btn-sm">Contact</a></li>
+        <li><a href="contact.html" class="btn btn-ghost btn-sm">Contact</a></li>
         <li>
-          <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+          <button class="theme-toggle" aria-label="Toggle dark mode">☀️</button>
         </li>
       </ul>
     </nav>
@@ -29,46 +41,43 @@
 
   <main>
     <section class="page container">
+      <p class="mono" style="color: var(--accent-2);">~/about</p>
       <h1>About</h1>
-      <p>
-        My name is Ibrahim Babashov. I'm from Azerbaijan and have been working
-        in the IT field for many years, currently based in Czechia.
+      <p class="lead">
+        My name is <strong>Ibrahim Babashov</strong>. I'm from Azerbaijan and have
+        been working in the IT field for many years, currently based in Czechia.
       </p>
       <p>
-        I hold <strong>RHCSA</strong>, <strong>CCNA</strong>,
-        <strong>LPIC 1</strong> and <strong>CompTIA A+</strong> certifications,
-        and I work day to day with Linux systems, networking, and automation.
-      </p>
-      <p>
-        This site is my corner of the internet: a place where I put information
-        I come across during work, hoping it will be helpful for others. It's
-        intentionally simple — plain HTML, CSS, and a little JavaScript, with no
-        frameworks or build step.
+        I work day to day with <strong>Linux systems, networking and automation</strong> —
+        from RHEL servers and Salt configuration management to AWS, KVM and Docker.
+        This site is my public notebook: I put here the information I come across
+        during work, hoping it will be helpful for others too.
       </p>
 
       <h2>Certifications</h2>
-      <ul>
-        <li>RHCSA — Red Hat Certified System Administrator</li>
-        <li>CCNA — Cisco Certified Network Associate</li>
-        <li>LPIC 1 — Linux Professional Institute Certification</li>
-        <li>CompTIA A+</li>
+      <ul class="cert-list">
+        <li><span><strong>RHCSA</strong> — Red Hat Certified System Administrator</span></li>
+        <li><span><strong>CCNA</strong> — Cisco Certified Network Associate</span></li>
+        <li><span><strong>LPIC 1</strong> — Linux Professional Institute Certification</span></li>
+        <li><span><strong>CompTIA A+</strong></span></li>
       </ul>
 
       <h2>Now</h2>
       <p>
-        Currently working with Linux infrastructure, configuration management
-        and cloud platforms — and writing about it here.
+        Currently working with Linux infrastructure, configuration management and
+        cloud platforms — and writing about it on the
+        <a href="blog.html">blog</a>.
       </p>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2026 Ibrahim Babashov. Built by hand with plain HTML, CSS &amp; JS.</p>
+      <p>© <span id="year">2026</span> Ibrahim Babashov — hand-built with HTML, CSS &amp; JS.</p>
       <div class="footer-links">
-        <a href="mailto:hello@ibrahimbabashov.com">Email</a>
-        <a href="https://github.com/" rel="noopener" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/" rel="noopener" target="_blank">LinkedIn</a>
+        <a href="mailto:hello@ibrahimbabashov.com">email</a>
+        <a href="https://github.com/" rel="noopener" target="_blank">github</a>
+        <a href="https://www.linkedin.com/" rel="noopener" target="_blank">linkedin</a>
       </div>
     </div>
   </footer>

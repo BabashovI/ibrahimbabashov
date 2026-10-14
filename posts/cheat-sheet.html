@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cheat Sheet — Ibrahim Babashov</title>
   <meta name="description" content="Bash: echo $? - exit status of last command (0 no error) &#x27; - Single quote removes meaning special meaning of special character. find /qwe -type f -iname *.js -…">
+  <meta name="theme-color" content="#07090f">
+  <script>
+    (function () {
+      try {
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -17,41 +31,47 @@
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../about.html">About</a></li>
-        <li><a href="../projects.html">Projects</a></li>
         <li><a href="../blog.html" aria-current="page">Blog</a></li>
-        <li><a href="../contact.html" class="btn btn-sm">Contact</a></li>
+        <li><a href="../contact.html" class="btn btn-ghost btn-sm">Contact</a></li>
         <li>
-          <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+          <button class="theme-toggle" aria-label="Toggle dark mode">☀️</button>
         </li>
       </ul>
     </nav>
   </header>
 
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
   <main>
-    <article class="page container post">
-      <header class="post-header">
+    <article class="post container">
+      <header class="post-head reveal">
+        <p class="post-meta mono">Oct 20, 2022<span class="sep">·</span>2 min read</p>
         <h1>Cheat Sheet</h1>
-        <p class="card-meta">Oct 20, 2022 · 2 min read</p>
-        <p class="card-meta post-origin">Originally published on
+        
+        <p class="post-origin mono">originally published on
           <a href="https://www.ibrahimbabashov.com/2022/10/cheat-sheet.html" rel="noopener" target="_blank">ibrahimbabashov.com (Blogger)</a>
         </p>
       </header>
 
-      <div class="post-content">
+      <div class="post-body">
 <h2 style="text-align: left;"><span style="background-color: white; color: red; font-family: Menlo, Monaco, &quot;Courier New&quot;, monospace; font-size: 15px; white-space: pre;"><br /></span></h2><div style="text-align: left;"><span style="background-color: white; color: red; font-family: Menlo, Monaco, &quot;Courier New&quot;, monospace; font-size: 15px; white-space: pre;">Bash:</span></div><div style="font-family: Menlo, Monaco, &quot;Courier New&quot;, monospace; font-size: 15px; line-height: 23px; white-space: pre;"><div><span style="background-color: white;"><span style="color: #2b00fe;">echo $?  - exit status of last command (0 no error)</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">' - Single quote removes meaning special meaning of special character.</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">find /qwe -type f -iname *.js -exec cp --parents -t /tmp/ {} +  -- find all js files and copy with parent directory</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">ystemctl set-default graphical.target (ls -l /lib/systemd/system/runlevel*)  -- set runlevel</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">echo &lt;password&gt; | sudo -S</span></span></div><span style="background-color: white;"><br /></span><div><span style="background-color: white;"><span style="color: #2b00fe;">for i in t@01 st@02 ba@sta03;do ssh -o RequestTTY=true $i "sudo -l";done  -- allow tty present</span></span></div><span style="background-color: white;"><br /></span><div><span style="background-color: white;"><span style="color: red;">VIM:</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">:r! sed -n '16,812 p' &lt; input_file.txt  -- copy line range from input_file </span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">:1,10d  -- delete line from 1 to 10 </span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">:se nu  -- show line numbers </span></span></div><span style="background-color: white;"><br /></span><div><span style="background-color: white;"><span style="color: red;">Apache:</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">Redirection in Apache (By default, the Redirect directive establishes a 302, or temporary, redirect.):</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">URL:https://www.digitalocean.com/community/tutorials/how-to-create-temporary-and-permanent-redirects-with-apache-and-nginx</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">&lt;VirtualHost *:80&gt;</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">    ServerName www.domain1.com</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">Redirect 301 /oldlocation http://www.domain2.com/newlocation</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">&lt;/VirtualHost&gt;</span></span></div><span style="background-color: white;"><span style="color: #2b00fe;"><br /></span></span><div><span style="background-color: white;"><span style="color: #2b00fe;">ServerTokens Prod  -- hides Apache version</span></span></div><span style="background-color: white;"><br /></span><div><span style="background-color: white;"><span style="color: red;">Logrotate:</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">vi /etc/logrotate.d/</span></span></div><span style="background-color: white;"><br /></span><div><span style="background-color: white;"><span style="color: red;">IPTABLES:</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">iptables -A INPUT -p tcp -m tcp --dport 5000 -j DROP    -- discard incoming traffic</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">iptables -A INPUT -p tcp -m tcp --dport 8094 -j ACCEPT  -- allow incoming traffic</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">iptables -D INPUT -p tcp -m tcp --dport 5000 -j DROP    -- Delete rule</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">iptables -I INPUT -p tcp ! -s yourIPaddress --dport 22 -j DROP -- discard incoming traffic for posrt 22 except yourIPaddress</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">iptables-save &gt;/etc/sysconfig/iptables  -- save rules</span></span></div><span style="background-color: white;"><br /></span><div><span style="background-color: white;"><span style="color: red;">GIT:</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">git init -- creates .git folder</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">Files are untracked when first created </span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">git add  -- to start tracking (stage all files and changes in the current folder)</span></span></div><div><span style="background-color: white;"><span style="color: #2b00fe;">git diff --staged  show changes on added files</span></span></div><br /></div>
       </div>
 
-      <p class="post-back"><a href="../blog.html" class="link-arrow">← Back to all posts</a></p>
+      <nav class="post-nav">
+<span></span><a class="post-nav-item next" href="git.html"><span class="dir">Older note</span><span class="t">GIT</span></a>
+      </nav>
+
+      <a class="back-link mono" href="../blog.html">← all notes</a>
     </article>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2026 Ibrahim Babashov. Built by hand with plain HTML, CSS &amp; JS.</p>
+      <p>© <span id="year">2026</span> Ibrahim Babashov — hand-built with HTML, CSS &amp; JS.</p>
       <div class="footer-links">
-        <a href="mailto:hello@ibrahimbabashov.com">Email</a>
-        <a href="https://github.com/" rel="noopener" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/" rel="noopener" target="_blank">LinkedIn</a>
+        <a href="mailto:hello@ibrahimbabashov.com">email</a>
+        <a href="https://github.com/" rel="noopener" target="_blank">github</a>
+        <a href="https://www.linkedin.com/" rel="noopener" target="_blank">linkedin</a>
       </div>
     </div>
   </footer>

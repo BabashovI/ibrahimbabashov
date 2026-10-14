@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Linux Boot — Ibrahim Babashov</title>
   <meta name="description" content="In this article, I am going to explain the booting process in detail. I can assure you that, you will get a clear idea about the Linux booting process after re…">
+  <meta name="theme-color" content="#07090f">
+  <script>
+    (function () {
+      try {
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -17,27 +31,29 @@
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../about.html">About</a></li>
-        <li><a href="../projects.html">Projects</a></li>
         <li><a href="../blog.html" aria-current="page">Blog</a></li>
-        <li><a href="../contact.html" class="btn btn-sm">Contact</a></li>
+        <li><a href="../contact.html" class="btn btn-ghost btn-sm">Contact</a></li>
         <li>
-          <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+          <button class="theme-toggle" aria-label="Toggle dark mode">☀️</button>
         </li>
       </ul>
     </nav>
   </header>
 
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
   <main>
-    <article class="page container post">
-      <header class="post-header">
+    <article class="post container">
+      <header class="post-head reveal">
+        <p class="post-meta mono">Jul 04, 2019<span class="sep">·</span>9 min read</p>
         <h1>Linux Boot</h1>
-        <p class="card-meta">Jul 04, 2019 · 9 min read · GRUB v2, INIT, Kernel, liloBIOS, MBR</p>
-        <p class="card-meta post-origin">Originally published on
+        <p class="post-labels mono"><b>GRUB v2 · INIT · Kernel · liloBIOS</b></p>
+        <p class="post-origin mono">originally published on
           <a href="https://www.ibrahimbabashov.com/2019/07/linux-boot.html" rel="noopener" target="_blank">ibrahimbabashov.com (Blogger)</a>
         </p>
       </header>
 
-      <div class="post-content">
+      <div class="post-body">
 <header class="entry-header">
   <h1 class="entry-title">
 </h1>
@@ -282,17 +298,21 @@ the path, starts swapping, checks the file systems, and so on. From the&nbsp;<tt
 
       </div>
 
-      <p class="post-back"><a href="../blog.html" class="link-arrow">← Back to all posts</a></p>
+      <nav class="post-nav">
+<a class="post-nav-item" href="my-rhcsa-certificate.html"><span class="dir">Newer note</span><span class="t">My RHCSA certificate</span></a><a class="post-nav-item next" href="eng-to-rus-translation.html"><span class="dir">Older note</span><span class="t">Eng to Rus translation</span></a>
+      </nav>
+
+      <a class="back-link mono" href="../blog.html">← all notes</a>
     </article>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2026 Ibrahim Babashov. Built by hand with plain HTML, CSS &amp; JS.</p>
+      <p>© <span id="year">2026</span> Ibrahim Babashov — hand-built with HTML, CSS &amp; JS.</p>
       <div class="footer-links">
-        <a href="mailto:hello@ibrahimbabashov.com">Email</a>
-        <a href="https://github.com/" rel="noopener" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/" rel="noopener" target="_blank">LinkedIn</a>
+        <a href="mailto:hello@ibrahimbabashov.com">email</a>
+        <a href="https://github.com/" rel="noopener" target="_blank">github</a>
+        <a href="https://www.linkedin.com/" rel="noopener" target="_blank">linkedin</a>
       </div>
     </div>
   </footer>

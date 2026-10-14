@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>First week in new Job — Ibrahim Babashov</title>
   <meta name="description" content="Hi I don&#x27;t know how to begin. Any way let&#x27;s begin from beginning of this way. Firstly i want to thank to all who reached, interviewed, offered this job. Finall…">
+  <meta name="theme-color" content="#07090f">
+  <script>
+    (function () {
+      try {
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -17,42 +31,48 @@
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../about.html">About</a></li>
-        <li><a href="../projects.html">Projects</a></li>
         <li><a href="../blog.html" aria-current="page">Blog</a></li>
-        <li><a href="../contact.html" class="btn btn-sm">Contact</a></li>
+        <li><a href="../contact.html" class="btn btn-ghost btn-sm">Contact</a></li>
         <li>
-          <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+          <button class="theme-toggle" aria-label="Toggle dark mode">☀️</button>
         </li>
       </ul>
     </nav>
   </header>
 
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
   <main>
-    <article class="page container post">
-      <header class="post-header">
+    <article class="post container">
+      <header class="post-head reveal">
+        <p class="post-meta mono">Mar 05, 2020<span class="sep">·</span>1 min read</p>
         <h1>First week in new Job</h1>
-        <p class="card-meta">Mar 05, 2020 · 1 min read</p>
-        <p class="card-meta post-origin">Originally published on
+        
+        <p class="post-origin mono">originally published on
           <a href="https://www.ibrahimbabashov.com/2020/03/first-week-in-new-job.html" rel="noopener" target="_blank">ibrahimbabashov.com (Blogger)</a>
         </p>
       </header>
 
-      <div class="post-content">
+      <div class="post-body">
 Hi<br />
 &nbsp;&nbsp;&nbsp; I don't know how to begin. Any way let's begin from beginning of this way. Firstly i want to&nbsp; thank to all who reached, interviewed, offered this job. Finally after about 6 month i'm here in huge company in the world . Why it took about 6 month after offer. Because visa process took very long time. Once i get visa, bought ticket to fly from Kutaisi (Georgia) to Prague (Czechia) in 25th of January. Staying one night in Prague and tomorrow i came to Brno. And new life began. 3rd of February was New Comers Day which all new employees who begin this day attended this event. Event took about 4 hours where beautiful girls from HR team give us information about company process. In the end team leader of our team took us to our workplace with our new laptops. While writing this post it's my 5th day. Everything goes as expected....
       </div>
 
-      <p class="post-back"><a href="../blog.html" class="link-arrow">← Back to all posts</a></p>
+      <nav class="post-nav">
+<a class="post-nav-item" href="3rd-month.html"><span class="dir">Newer note</span><span class="t">3rd Month</span></a><a class="post-nav-item next" href="install-cisco-anyconnect-on-ubuntu.html"><span class="dir">Older note</span><span class="t">Install Cisco AnyConnect on Ubuntu</span></a>
+      </nav>
+
+      <a class="back-link mono" href="../blog.html">← all notes</a>
     </article>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2026 Ibrahim Babashov. Built by hand with plain HTML, CSS &amp; JS.</p>
+      <p>© <span id="year">2026</span> Ibrahim Babashov — hand-built with HTML, CSS &amp; JS.</p>
       <div class="footer-links">
-        <a href="mailto:hello@ibrahimbabashov.com">Email</a>
-        <a href="https://github.com/" rel="noopener" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/" rel="noopener" target="_blank">LinkedIn</a>
+        <a href="mailto:hello@ibrahimbabashov.com">email</a>
+        <a href="https://github.com/" rel="noopener" target="_blank">github</a>
+        <a href="https://www.linkedin.com/" rel="noopener" target="_blank">linkedin</a>
       </div>
     </div>
   </footer>

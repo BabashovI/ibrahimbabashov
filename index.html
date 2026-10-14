@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ibrahim Babashov — Portfolio &amp; Blog</title>
-  <meta name="description" content="Personal website of Ibrahim Babashov: projects, writing, and contact.">
+  <title>Ibrahim Babashov — Linux, networks & cloud notes</title>
+  <meta name="description" content="Ibrahim Babashov — Linux sysadmin & IT engineer. Cheat sheets, configs and lessons learned from real production work.">
+  <meta name="theme-color" content="#07090f">
+  <script>
+    (function () {
+      try {
+        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -17,85 +30,106 @@
       <ul class="nav-links">
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html" class="btn btn-sm">Contact</a></li>
+        <li><a href="contact.html" class="btn btn-ghost btn-sm">Contact</a></li>
         <li>
-          <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+          <button class="theme-toggle" aria-label="Toggle dark mode">☀️</button>
         </li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <section class="hero container">
-      <p class="hero-kicker">Hi, my name is</p>
-      <h1>Ibrahim Babashov</h1>
-      <p class="hero-sub">
-        I build things for the web and write about what I learn along the way.
-      </p>
-      <div class="hero-actions">
-        <a href="projects.html" class="btn">View my work</a>
-        <a href="blog.html" class="btn btn-outline">Read the blog</a>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <p class="chip reveal"><span class="dot"></span>RHCSA · CCNA · LPIC 1 · CompTIA A+</p>
+        <h1 class="reveal">Notes from real <span class="grad-text">production&nbsp;work.</span></h1>
+        <p class="hero-sub reveal">
+          Hey, I'm <strong>Ibrahim Babashov</strong> — Linux sysadmin &amp; IT engineer
+          from Azerbaijan, based in Czechia. This site is my public notebook:
+          cheat sheets, configs and lessons learned running real infrastructure.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="blog.html" class="btn btn-primary">Read the blog</a>
+          <a href="about.html" class="btn btn-ghost">About me</a>
+        </div>
       </div>
     </section>
 
-    <section class="section container">
-      <div class="section-head">
-        <h2>Featured projects</h2>
-        <a href="projects.html" class="link-arrow">All projects →</a>
-      </div>
-      <div class="grid grid-3">
-        <article class="card">
-          <h3>Project One</h3>
-          <p>A short description of the project — what it does and the problem it solves.</p>
-          <p class="card-tags">HTML · CSS · JavaScript</p>
-        </article>
-        <article class="card">
-          <h3>Project Two</h3>
-          <p>A short description of the project — what it does and the problem it solves.</p>
-          <p class="card-tags">Node.js · APIs</p>
-        </article>
-        <article class="card">
-          <h3>Project Three</h3>
-          <p>A short description of the project — what it does and the problem it solves.</p>
-          <p class="card-tags">Tooling · Open Source</p>
-        </article>
+    <!-- Latest notes -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2><span class="index">01 /</span>Latest notes</h2>
+          <a href="blog.html" class="link-more">view all 18 →</a>
+        </div>
+        <div class="reveal">
+          <a class="note-row" href="posts/cheat-sheet.html">
+            <span class="note-date">2022-10-20</span>
+            <span>
+              <span class="note-title">Cheat Sheet</span>
+              <span class="note-labels">bash · vim · apache · iptables · git</span>
+            </span>
+            <span class="note-arrow">→</span>
+          </a>
+          <a class="note-row" href="posts/git.html">
+            <span class="note-date">2022-09-16</span>
+            <span>
+              <span class="note-title">GIT</span>
+              <span class="note-labels">remotes · reset · revert</span>
+            </span>
+            <span class="note-arrow">→</span>
+          </a>
+          <a class="note-row" href="posts/euro-trip-chapter1-bucovice-prague.html">
+            <span class="note-date">2022-07-15</span>
+            <span>
+              <span class="note-title">Euro trip. Chapter 1: Bucovice → Prague → Nuremberg → Leipzig → Dresden</span>
+              <span class="note-labels">travel · 1268 km by car</span>
+            </span>
+            <span class="note-arrow">→</span>
+          </a>
+        </div>
       </div>
     </section>
 
-    <section class="section container">
-      <div class="section-head">
-        <h2>Latest posts</h2>
-        <a href="blog.html" class="link-arrow">All posts →</a>
+    <!-- Toolbox -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2><span class="index">02 /</span>Daily drivers</h2>
+        </div>
+        <div class="chips reveal">
+          <span class="tag">Linux (RHEL / Ubuntu)</span>
+          <span class="tag">Salt</span>
+          <span class="tag">AWS</span>
+          <span class="tag">Docker / Podman</span>
+          <span class="tag">KVM / libvirt</span>
+          <span class="tag">Git</span>
+          <span class="tag">iptables</span>
+          <span class="tag">Apache</span>
+          <span class="tag">ESXi</span>
+        </div>
       </div>
-      <div class="grid grid-3">
-        <article class="card">
-          <p class="card-meta"><time datetime="2022-10-20">Oct 20, 2022</time></p>
-          <h3><a href="posts/cheat-sheet.html">Cheat Sheet</a></h3>
-          <p>Handy commands for Bash, VIM, Apache, logrotate, iptables and Git — collected from day-to-day work.</p>
-        </article>
-        <article class="card">
-          <p class="card-meta"><time datetime="2022-09-16">Sep 16, 2022</time></p>
-          <h3><a href="posts/git.html">GIT</a></h3>
-          <p>Setting up shared repositories on GitHub, changing remote URLs, and undoing changes with reset &amp; revert.</p>
-        </article>
-        <article class="card">
-          <p class="card-meta"><time datetime="2022-07-15">Jul 15, 2022</time></p>
-          <h3><a href="posts/euro-trip-chapter1-bucovice-prague.html">Euro trip. Chapter 1</a></h3>
-          <p>A road trip from Bucovice through Prague, Nuremberg, Leipzig and Dresden — 1268 km by car.</p>
-        </article>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container reveal">
+        <h2>Found something useful?</h2>
+        <p>The whole point of these notes is that someone else can use them too. Feedback, corrections and hellos are always welcome.</p>
+        <a href="contact.html" class="btn btn-primary">Say hello →</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2026 Ibrahim Babashov. Built by hand with plain HTML, CSS &amp; JS.</p>
+      <p>© <span id="year">2026</span> Ibrahim Babashov — hand-built with HTML, CSS &amp; JS.</p>
       <div class="footer-links">
-        <a href="mailto:hello@ibrahimbabashov.com">Email</a>
-        <a href="https://github.com/" rel="noopener" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/" rel="noopener" target="_blank">LinkedIn</a>
+        <a href="mailto:hello@ibrahimbabashov.com">email</a>
+        <a href="https://github.com/" rel="noopener" target="_blank">github</a>
+        <a href="https://www.linkedin.com/" rel="noopener" target="_blank">linkedin</a>
       </div>
     </div>
   </footer>

@@ -1,25 +1,25 @@
 # ibrahimbabashov.com
 
-Personal blog + portfolio of Ibrahim Babashov.
+Personal site of Ibrahim Babashov — Linux sysadmin & IT engineer.
+Notes, cheat sheets and experiences from real production work.
 
-Built by hand with **plain HTML, CSS, and JavaScript** — no frameworks, no
-build step, no dependencies.
+Built by hand with **plain HTML, CSS, and JavaScript** — no frameworks,
+no build step, no dependencies (fonts are loaded from Google Fonts with
+system fallbacks).
 
 ## Structure
 
 ```
 .
-├── index.html        # Landing page: hero, featured projects, latest posts
-├── about.html        # About page
-├── projects.html     # Portfolio listing
-├── blog.html         # Blog index
+├── index.html        # Landing page: hero, latest notes, toolbox, contact CTA
+├── about.html        # About + certifications
+├── blog.html         # Blog archive, grouped by year
 ├── contact.html      # Contact page
-├── posts/            # Individual blog posts
-│   └── hello-world.html
+├── posts/            # 18 posts migrated from the old Blogger blog
 ├── css/
-│   └── style.css     # All styling (light/dark theme via CSS variables)
+│   └── style.css     # Design system (dark-first, violet→cyan, light theme too)
 └── js/
-    └── main.js       # Theme toggle + mobile navigation
+    └── main.js       # Theme toggle, mobile nav, reading progress, reveals
 ```
 
 ## Run locally
@@ -32,26 +32,22 @@ npx serve .
 python3 -m http.server 8000
 ```
 
+## Design notes
+
+- Dark theme by default, light theme available; saved in `localStorage`
+- Reading progress bar and prev/next navigation on post pages
+- Scroll-reveal animations (respects `prefers-reduced-motion`)
+- No projects section — the site is a personal notebook, not a portfolio grid
+
 ## Writing a new post
 
-1. Copy `posts/hello-world.html` to `posts/my-new-post.html`.
-2. Update the `<title>`, description, and body.
-3. Add a link to it in `blog.html` (and optionally the "Latest posts" section
-   on `index.html`).
+1. Create `posts/my-new-note.html` (copy an existing post for the template).
+2. Update the `<title>`, description, and body inside `.post-body`.
+3. Add a link to it in `blog.html` (and optionally the "Latest notes"
+   section on `index.html`).
 
 ## Deploying
 
-Any static host works. Common options:
-
-- **GitHub Pages** — push to a repo, enable Pages in settings
-- **Netlify / Vercel** — drag-and-drop or connect the repo, no config needed
-- **Cloudflare Pages** — connect the repo, leave the build command empty
-
-Point the DNS of `ibrahimbabashov.com` at your host of choice and you're live.
-
-## Features
-
-- Responsive layout with mobile navigation
-- Dark / light theme toggle (saved in `localStorage`, respects system preference)
-- SEO meta tags on every page
-- Zero dependencies
+Any static host works — GitHub Pages, Netlify, Vercel, Cloudflare Pages.
+No build command needed. Point the DNS of `ibrahimbabashov.com` at your
+host and you're live.
