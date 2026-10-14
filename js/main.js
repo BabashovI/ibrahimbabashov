@@ -12,8 +12,22 @@
     return root.getAttribute("data-theme") || "dark";
   }
 
+  function syncThemeColor(theme) {
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute("content", theme === "dark" ? "#07090f" : "#f6f6fa");
+  }
+
   function refreshToggle() {
-    if (toggle) toggle.textContent = currentTheme() === "dark" ? "☀️" : "🌙";
+    var dark = currentTheme() === "dark";
+    if (toggle) {
+      toggle.textContent = dark ? "☀️" : "🌙";
+      toggle.setAttribute(
+        "aria-label",
+        dark ? "Switch to light theme" : "Switch to dark theme"
+      );
+      toggle.setAttribute("aria-pressed", dark ? "true" : "false");
+    }
+    syncThemeColor(dark ? "dark" : "light");
   }
 
   refreshToggle();
@@ -35,10 +49,33 @@
   var navToggle = document.querySelector(".nav-toggle");
   var navLinks = document.querySelector(".nav-links");
 
+  function closeNav() {
+    if (!navLinks) return;
+    navLinks.classList.remove("open");
+    if (navToggle) navToggle.setAttribute("aria-expanded", "false");
+  }
+
   if (navToggle && navLinks) {
     navToggle.addEventListener("click", function () {
       var isOpen = navLinks.classList.toggle("open");
       navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    // Close after choosing a link
+    navLinks.addEventListener("click", function (e) {
+      if (e.target.closest("a")) closeNav();
+    });
+
+    // Close when clicking outside the header
+    document.addEventListener("click", function (e) {
+      if (navLinks.classList.contains("open") && !e.target.closest(".nav")) {
+        closeNav();
+      }
+    });
+
+    // Close on Escape
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeNav();
     });
   }
 
@@ -80,6 +117,10 @@
       el.classList.add("in");
     });
   }
+
+  // Tells js/theme-init.js that reveal handling is active, so its watchdog
+  // does not force-reveal everything on load.
+  window.__revealReady = true;
 
   // ---------- Footer year ----------
   var year = document.getElementById("year");

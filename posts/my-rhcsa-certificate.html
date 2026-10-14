@@ -5,17 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My RHCSA certificate — Ibrahim Babashov</title>
   <meta name="description" content="Hi every one. I created this post last week before my RHCSA exam. Firstly i want write how i become RHCSA. I got some certificates including sport related cert…">
+  <meta name="author" content="Ibrahim Babashov">
   <meta name="theme-color" content="#07090f">
-  <script>
-    (function () {
-      try {
-        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
-      } catch (e) {
-        document.documentElement.setAttribute("data-theme", "dark");
-      }
-    })();
-  </script>
-
+  <link rel="canonical" href="https://ibrahimbabashov.com/posts/my-rhcsa-certificate.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="ibrahimbabashov.com">
+  <meta property="og:title" content="My RHCSA certificate — Ibrahim Babashov">
+  <meta property="og:description" content="Hi every one. I created this post last week before my RHCSA exam. Firstly i want write how i become RHCSA. I got some certificates including sport related cert…">
+  <meta property="og:url" content="https://ibrahimbabashov.com/posts/my-rhcsa-certificate.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="My RHCSA certificate — Ibrahim Babashov">
+  <meta name="twitter:description" content="Hi every one. I created this post last week before my RHCSA exam. Firstly i want write how i become RHCSA. I got some certificates including sport related cert…">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <script src="../js/theme-init.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -25,20 +27,35 @@
   <header class="site-header">
     <nav class="nav container">
       <a href="../index.html" class="brand">ibrahimbabashov<span class="brand-dot">.com</span></a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links">
+      <ul class="nav-links" id="primary-nav">
         <li><a href="../index.html">Home</a></li>
         <li><a href="../about.html">About</a></li>
         <li><a href="../blog.html" aria-current="page">Blog</a></li>
         <li><a href="../contact.html" class="btn btn-ghost btn-sm">Contact</a></li>
         <li>
-          <button class="theme-toggle" aria-label="Toggle dark mode">☀️</button>
+          <button class="theme-toggle" aria-label="Switch to light theme" aria-pressed="true">☀️</button>
         </li>
       </ul>
     </nav>
   </header>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Ibrahim Babashov — hand-built with HTML, CSS &amp; JS.</p>
+      <div class="footer-links">
+        <a href="mailto:hello@ibrahimbabashov.com">email</a>
+        <a href="https://github.com/" rel="noopener" target="_blank">github</a>
+        <a href="https://www.linkedin.com/" rel="noopener" target="_blank">linkedin</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
 
   <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
 
@@ -47,7 +64,7 @@
       <header class="post-head reveal">
         <p class="post-meta mono">Jul 04, 2019<span class="sep">·</span>1 min read</p>
         <h1>My RHCSA certificate</h1>
-        
+
         <p class="post-origin mono">originally published on
           <a href="https://www.ibrahimbabashov.com/2019/07/my-rhcsa-certificate.html" rel="noopener" target="_blank">ibrahimbabashov.com (Blogger)</a>
         </p>
@@ -57,7 +74,7 @@
 Hi every one. <br /><br />&nbsp;&nbsp;&nbsp; I created this post last week before my RHCSA exam. Firstly i want write how i become RHCSA. I got some certificates including sport related certificates. My first certificate was CCNA for geting this it took for me about 3 years. Last year of my bachelour degree i began interesting in networking. Of course why , because i fill in lov ewith command promt. From networking it took me to the world of open source . First distro i installed on my pc was Ubuntu . I still you Ubuntu. Beacuse it has most friendly interface. From that time firstly i interested in LPIC certificates which one i got last year. While passing my CompTIA Linux+. Be honestly i made mistake getting this certificate. Itself its not bad cert . While preparing this certificate you learn a lot. Also i read Sanders RHEL cert guide. Which helped me a lot passing my RHCSA. <br />&nbsp;&nbsp;&nbsp;&nbsp; Let's talk about exam day. Whole night i was unable sleep. In my dreams i only see "lvreduce" command. Which was my nightmare. I scheduled exam to 10:00 AM . Exam lasts 2:30 hours. But 1:30 hours was enough for me. After exam it took about 2 days. 30 June night i got that mail. The feelings was amaizing. My exam result&nbsp; 300/300 (100%). After results i got more motivated and inspired. For future planing get RHCE certificaion. That's all. 
       </div>
 
-      <nav class="post-nav">
+      <nav class="post-nav" aria-label="More notes">
 <a class="post-nav-item" href="linux-basic-shell-commands.html"><span class="dir">Newer note</span><span class="t">Linux basic shell commands</span></a><a class="post-nav-item next" href="linux-boot.html"><span class="dir">Older note</span><span class="t">Linux Boot</span></a>
       </nav>
 

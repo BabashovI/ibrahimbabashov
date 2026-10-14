@@ -4,17 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Ibrahim Babashov</title>
-  <meta name="description" content="Get in touch with Ibrahim Babashov.">
+  <meta name="description" content="Get in touch with Ibrahim Babashov — Linux sysadmin & IT engineer.">
+  <meta name="author" content="Ibrahim Babashov">
   <meta name="theme-color" content="#07090f">
-  <script>
-    (function () {
-      try {
-        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
-      } catch (e) {
-        document.documentElement.setAttribute("data-theme", "dark");
-      }
-    })();
-  </script>
+  <link rel="canonical" href="https://ibrahimbabashov.com/contact.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ibrahimbabashov.com">
+  <meta property="og:title" content="Contact — Ibrahim Babashov">
+  <meta property="og:description" content="Get in touch with Ibrahim Babashov.">
+  <meta property="og:url" content="https://ibrahimbabashov.com/contact.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Contact — Ibrahim Babashov">
+  <meta name="twitter:description" content="Get in touch with Ibrahim Babashov.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="js/theme-init.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -24,16 +27,16 @@
   <header class="site-header">
     <nav class="nav container">
       <a href="index.html" class="brand">ibrahimbabashov<span class="brand-dot">.com</span></a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links">
+      <ul class="nav-links" id="primary-nav">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html" class="btn btn-ghost btn-sm" aria-current="page">Contact</a></li>
         <li>
-          <button class="theme-toggle" aria-label="Toggle dark mode">☀️</button>
+          <button class="theme-toggle" aria-label="Switch to light theme" aria-pressed="true">☀️</button>
         </li>
       </ul>
     </nav>
@@ -41,7 +44,7 @@
 
   <main>
     <section class="page container">
-      <p class="mono" style="color: var(--accent-2);">~/contact</p>
+      <p class="kicker">~/contact</p>
       <h1>Contact</h1>
       <p class="lead">
         Want to say hi, share feedback, or correct something in the notes?

@@ -4,18 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog — Ibrahim Babashov</title>
-  <meta name="description" content="All notes and cheat sheets by Ibrahim Babashov — Linux, networking, AWS, Salt, Docker and more.">
+  <meta name="description" content="All 18 notes and cheat sheets by Ibrahim Babashov — Linux, networking, AWS, Salt, Docker and more.">
+  <meta name="author" content="Ibrahim Babashov">
   <meta name="theme-color" content="#07090f">
-  <script>
-    (function () {
-      try {
-        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
-      } catch (e) {
-        document.documentElement.setAttribute("data-theme", "dark");
-      }
-    })();
-  </script>
-
+  <link rel="canonical" href="https://ibrahimbabashov.com/blog.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ibrahimbabashov.com">
+  <meta property="og:title" content="Blog — Ibrahim Babashov">
+  <meta property="og:description" content="All 18 notes and cheat sheets by Ibrahim Babashov — Linux, networking, AWS, Salt, Docker and more.">
+  <meta property="og:url" content="https://ibrahimbabashov.com/blog.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Blog — Ibrahim Babashov">
+  <meta name="twitter:description" content="All 18 notes and cheat sheets by Ibrahim Babashov — Linux, networking, AWS, Salt, Docker and more.">
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <script src="./js/theme-init.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -25,24 +27,39 @@
   <header class="site-header">
     <nav class="nav container">
       <a href="./index.html" class="brand">ibrahimbabashov<span class="brand-dot">.com</span></a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links">
+      <ul class="nav-links" id="primary-nav">
         <li><a href="./index.html">Home</a></li>
         <li><a href="./about.html">About</a></li>
         <li><a href="./blog.html" aria-current="page">Blog</a></li>
         <li><a href="./contact.html" class="btn btn-ghost btn-sm">Contact</a></li>
         <li>
-          <button class="theme-toggle" aria-label="Toggle dark mode">☀️</button>
+          <button class="theme-toggle" aria-label="Switch to light theme" aria-pressed="true">☀️</button>
         </li>
       </ul>
     </nav>
   </header>
 
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Ibrahim Babashov — hand-built with HTML, CSS &amp; JS.</p>
+      <div class="footer-links">
+        <a href="mailto:hello@ibrahimbabashov.com">email</a>
+        <a href="https://github.com/" rel="noopener" target="_blank">github</a>
+        <a href="https://www.linkedin.com/" rel="noopener" target="_blank">linkedin</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
+
   <main>
     <section class="page container">
-      <p class="mono" style="color: var(--accent-2);">~/notes</p>
+      <p class="kicker">~/notes</p>
       <h1>Blog</h1>
       <p class="lead">
         Everything I learned the hard way: cheat sheets, configs and
@@ -53,27 +70,27 @@
       <h2 class="year-mark">2022</h2>
       <a class="note-row" href="posts/cheat-sheet.html">
         <span class="note-date">2022-10-20</span>
-        <span><span class="note-title">Cheat Sheet</span></span>
+        <span class="note-body"><span class="note-title">Cheat Sheet</span></span>
         <span class="note-arrow">→</span>
       </a>
       <a class="note-row" href="posts/git.html">
         <span class="note-date">2022-09-16</span>
-        <span><span class="note-title">GIT</span></span>
+        <span class="note-body"><span class="note-title">GIT</span></span>
         <span class="note-arrow">→</span>
       </a>
       <a class="note-row" href="posts/euro-trip-chapter1-bucovice-prague.html">
         <span class="note-date">2022-07-15</span>
-        <span><span class="note-title">Euro trip. Chapter1: Bucovice-Prague-Nuremberg-Leipzig-Dresden</span><span class="note-labels"><span>Dresden · europe. euro. TUV · Germany</span></span></span>
+        <span class="note-body"><span class="note-title">Euro trip. Chapter1: Bucovice-Prague-Nuremberg-Leipzig-Dresden</span><span class="note-labels"><span>Dresden · europe. euro. TUV · Germany</span></span></span>
         <span class="note-arrow">→</span>
       </a>
       <a class="note-row" href="posts/salt-cheat-sheet.html">
         <span class="note-date">2022-07-12</span>
-        <span><span class="note-title">Salt -- cheat sheet</span><span class="note-labels"><span>master · minion · proxy</span></span></span>
+        <span class="note-body"><span class="note-title">Salt -- cheat sheet</span><span class="note-labels"><span>master · minion · proxy</span></span></span>
         <span class="note-arrow">→</span>
       </a>
       <a class="note-row" href="posts/aws-info.html">
         <span class="note-date">2022-05-27</span>
-        <span><span class="note-title">AWS info</span><span class="note-labels"><span>AWS · cloudfront · ec2</span></span></span>
+        <span class="note-body"><span class="note-title">AWS info</span><span class="note-labels"><span>AWS · cloudfront · ec2</span></span></span>
         <span class="note-arrow">→</span>
       </a>
     </div>
@@ -81,7 +98,7 @@
       <h2 class="year-mark">2021</h2>
       <a class="note-row" href="posts/sudoers.html">
         <span class="note-date">2021-06-22</span>
-        <span><span class="note-title">Sudoers</span><span class="note-labels"><span>sudo · sudoers</span></span></span>
+        <span class="note-body"><span class="note-title">Sudoers</span><span class="note-labels"><span>sudo · sudoers</span></span></span>
         <span class="note-arrow">→</span>
       </a>
     </div>
@@ -89,22 +106,22 @@
       <h2 class="year-mark">2020</h2>
       <a class="note-row" href="posts/service-hosting-kvm-documentation.html">
         <span class="note-date">2020-10-08</span>
-        <span><span class="note-title">Service Hosting - KVM documentation</span><span class="note-labels"><span>CPU · KVM · libvirt</span></span></span>
+        <span class="note-body"><span class="note-title">Service Hosting - KVM documentation</span><span class="note-labels"><span>CPU · KVM · libvirt</span></span></span>
         <span class="note-arrow">→</span>
       </a>
       <a class="note-row" href="posts/docker-basic-commands-podman.html">
         <span class="note-date">2020-05-10</span>
-        <span><span class="note-title">Docker basic commands (podman)</span></span>
+        <span class="note-body"><span class="note-title">Docker basic commands (podman)</span></span>
         <span class="note-arrow">→</span>
       </a>
       <a class="note-row" href="posts/3rd-month.html">
         <span class="note-date">2020-05-05</span>
-        <span><span class="note-title">3rd Month</span></span>
+        <span class="note-body"><span class="note-title">3rd Month</span></span>
         <span class="note-arrow">→</span>
       </a>
       <a class="note-row" href="posts/first-week-in-new-job.html">
         <span class="note-date">2020-03-05</span>
-        <span><span class="note-title">First week in new Job</span></span>
+        <span class="note-body"><span class="note-title">First week in new Job</span></span>
         <span class="note-arrow">→</span>
       </a>
     </div>
@@ -112,37 +129,37 @@
       <h2 class="year-mark">2019</h2>
       <a class="note-row" href="posts/install-cisco-anyconnect-on-ubuntu.html">
         <span class="note-date">2019-12-15</span>
-        <span><span class="note-title">Install Cisco AnyConnect on Ubuntu</span></span>
+        <span class="note-body"><span class="note-title">Install Cisco AnyConnect on Ubuntu</span></span>
         <span class="note-arrow">→</span>
       </a>
       <a class="note-row" href="posts/linux-basic-shell-commands.html">
         <span class="note-date">2019-12-15</span>
-        <span><span class="note-title">Linux basic shell commands</span></span>
+        <span class="note-body"><span class="note-title">Linux basic shell commands</span></span>
         <span class="note-arrow">→</span>
       </a>
       <a class="note-row" href="posts/my-rhcsa-certificate.html">
         <span class="note-date">2019-07-04</span>
-        <span><span class="note-title">My RHCSA certificate</span></span>
+        <span class="note-body"><span class="note-title">My RHCSA certificate</span></span>
         <span class="note-arrow">→</span>
       </a>
       <a class="note-row" href="posts/linux-boot.html">
         <span class="note-date">2019-07-04</span>
-        <span><span class="note-title">Linux Boot</span><span class="note-labels"><span>GRUB v2 · INIT · Kernel</span></span></span>
+        <span class="note-body"><span class="note-title">Linux Boot</span><span class="note-labels"><span>GRUB v2 · INIT · Kernel</span></span></span>
         <span class="note-arrow">→</span>
       </a>
       <a class="note-row" href="posts/eng-to-rus-translation.html">
         <span class="note-date">2019-06-22</span>
-        <span><span class="note-title">Eng to Rus translation</span></span>
+        <span class="note-body"><span class="note-title">Eng to Rus translation</span></span>
         <span class="note-arrow">→</span>
       </a>
       <a class="note-row" href="posts/reset-root-pass-in-rhel-7-centos-7.html">
         <span class="note-date">2019-06-05</span>
-        <span><span class="note-title">How To Reset root pass in RHEL 7 &amp; CentOS 7</span><span class="note-labels"><span>CentOS · mount · passwd</span></span></span>
+        <span class="note-body"><span class="note-title">How To Reset root pass in RHEL 7 &amp; CentOS 7</span><span class="note-labels"><span>CentOS · mount · passwd</span></span></span>
         <span class="note-arrow">→</span>
       </a>
       <a class="note-row" href="posts/resetting-root-password-on-rhel-7.html">
         <span class="note-date">2019-05-23</span>
-        <span><span class="note-title">Resetting the root password on RHEL 7 Systems</span></span>
+        <span class="note-body"><span class="note-title">Resetting the root password on RHEL 7 Systems</span></span>
         <span class="note-arrow">→</span>
       </a>
     </div>
@@ -150,7 +167,7 @@
       <h2 class="year-mark">2018</h2>
       <a class="note-row" href="posts/reset-root-pass-in-esxi-55.html">
         <span class="note-date">2018-11-12</span>
-        <span><span class="note-title">Reset root pass in ESXi 5.5</span><span class="note-labels"><span>ESXi · fdisk · Ubuntu</span></span></span>
+        <span class="note-body"><span class="note-title">Reset root pass in ESXi 5.5</span><span class="note-labels"><span>ESXi · fdisk · Ubuntu</span></span></span>
         <span class="note-arrow">→</span>
       </a>
     </div>

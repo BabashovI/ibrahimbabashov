@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ibrahim Babashov — Linux, networks & cloud notes</title>
+  <title>Ibrahim Babashov — Linux, networks &amp; cloud notes</title>
   <meta name="description" content="Ibrahim Babashov — Linux sysadmin & IT engineer. Cheat sheets, configs and lessons learned from real production work.">
+  <meta name="author" content="Ibrahim Babashov">
   <meta name="theme-color" content="#07090f">
-  <script>
-    (function () {
-      try {
-        document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
-      } catch (e) {
-        document.documentElement.setAttribute("data-theme", "dark");
-      }
-    })();
-  </script>
+  <link rel="canonical" href="https://ibrahimbabashov.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ibrahimbabashov.com">
+  <meta property="og:title" content="Ibrahim Babashov — Linux, networks &amp; cloud notes">
+  <meta property="og:description" content="Cheat sheets, configs and lessons learned from real production work.">
+  <meta property="og:url" content="https://ibrahimbabashov.com/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ibrahim Babashov — Linux, networks &amp; cloud notes">
+  <meta name="twitter:description" content="Cheat sheets, configs and lessons learned from real production work.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="js/theme-init.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -24,16 +27,16 @@
   <header class="site-header">
     <nav class="nav container">
       <a href="index.html" class="brand">ibrahimbabashov<span class="brand-dot">.com</span></a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
         <span></span><span></span><span></span>
       </button>
-      <ul class="nav-links">
+      <ul class="nav-links" id="primary-nav">
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="contact.html" class="btn btn-ghost btn-sm">Contact</a></li>
         <li>
-          <button class="theme-toggle" aria-label="Toggle dark mode">☀️</button>
+          <button class="theme-toggle" aria-label="Switch to light theme" aria-pressed="true">☀️</button>
         </li>
       </ul>
     </nav>
@@ -67,7 +70,7 @@
         <div class="reveal">
           <a class="note-row" href="posts/cheat-sheet.html">
             <span class="note-date">2022-10-20</span>
-            <span>
+            <span class="note-body">
               <span class="note-title">Cheat Sheet</span>
               <span class="note-labels">bash · vim · apache · iptables · git</span>
             </span>
@@ -75,7 +78,7 @@
           </a>
           <a class="note-row" href="posts/git.html">
             <span class="note-date">2022-09-16</span>
-            <span>
+            <span class="note-body">
               <span class="note-title">GIT</span>
               <span class="note-labels">remotes · reset · revert</span>
             </span>
@@ -83,7 +86,7 @@
           </a>
           <a class="note-row" href="posts/euro-trip-chapter1-bucovice-prague.html">
             <span class="note-date">2022-07-15</span>
-            <span>
+            <span class="note-body">
               <span class="note-title">Euro trip. Chapter 1: Bucovice → Prague → Nuremberg → Leipzig → Dresden</span>
               <span class="note-labels">travel · 1268 km by car</span>
             </span>
