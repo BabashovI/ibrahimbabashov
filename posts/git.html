@@ -71,18 +71,22 @@
       </header>
 
       <div class="post-body">
-<div>&nbsp;</div><div><br /></div><div>To share this code with your teammates, you’ll want to create a shared Git repository that you can all access. One way to do this is to use GitHub. Head over to github.com, create an account if you don’t have one already, and create a new repository. Configure your local Git repository to use the new GitHub repository as a remote endpoint named origin as follows:<br />git remote add origin git@github.com:&lt;YOUR_USERNAME&gt;/&lt;YOUR_REPO_NAME&gt;.git</div><div>git push origin main</div><div>git pull origin main</div><div><br /></div><div># Create local repo server</div><div>#git init --bare&nbsp;</div><div><br /></div><div>change remote repo url:</div><div><pre class="lang-sh s-code-block"><code class="hljs language-bash">git remote -v
-<span class="hljs-comment"># View existing remotes</span>
-<span class="hljs-comment"># origin  https://github.com/user/repo.git (fetch)</span>
-<span class="hljs-comment"># origin  https://github.com/user/repo.git (push)</span>
+<p>To share this code with your teammates, you’ll want to create a shared Git repository that you can all access. One way to do this is to use GitHub. Head over to github.com, create an account if you don’t have one already, and create a new repository. Configure your local Git repository to use the new GitHub repository as a remote endpoint named origin as follows:<br>git remote add origin git@github.com:<YOUR_USERNAME>/<YOUR_REPO_NAME>.git</p><pre>git push origin main
+git pull origin main
+# Create local repo server
+#git init --bare</pre><p>change remote repo url:</p><pre>git remote -v
+# View existing remotes
+# origin  https://github.com/user/repo.git (fetch)
+# origin  https://github.com/user/repo.git (push)
 
 git remote set-url origin https://github.com/user/repo2.git
-<span class="hljs-comment"># Change the 'origin' remote's URL</span>
+# Change the 'origin' remote's URL
 
 git remote -v
-<span class="hljs-comment"># Verify new remote URL</span>
-<span class="hljs-comment"># origin  https://github.com/user/repo2.git (fetch)</span>
-<span class="hljs-comment"># origin  https://github.com/user/repo2.git (push)</span></code></pre><pre class="lang-sh s-code-block"><code class="hljs language-bash"><span class="hljs-comment"><br /></span></code></pre><pre class="lang-sh s-code-block"><code class="hljs language-bash"><span class="hljs-comment">Git reset &amp; revert:</span></code></pre><pre class="lang-sh s-code-block"><code class="hljs language-bash"><span class="hljs-comment"># restore and revert:</span></code></pre><p><code class="hljs language-bash"><span class="hljs-comment">#git log --oneline</span></code><br /><code class="hljs language-bash"><span class="hljs-comment">#git revert commit_hash</span></code><br /></p><div><code class="hljs language-bash"><span class="hljs-comment">#git restore -s commit_hash file(s)<br /></span></code><code class="hljs language-bash"><span class="hljs-comment">#git reflog</span></code></div><pre class="lang-sh s-code-block"><code class="hljs language-bash"><span class="hljs-comment">https://www.atlassian.com/git/tutorials/learn-undoing-changes-with-bitbucket</span></code></pre></div>
+# Verify new remote URL
+# origin  https://github.com/user/repo2.git (fetch)
+# origin  https://github.com/user/repo2.git (push)</pre><pre></pre><pre>Git reset &amp; revert:</pre><pre># restore and revert:</pre><p><code>#git log --oneline</code><br><code>#git revert commit_hash</code><br></p><pre>#git restore -s commit_hash file(s)
+#git reflog</pre><pre>https://www.atlassian.com/git/tutorials/learn-undoing-changes-with-bitbucket</pre>
       </div>
 
       <nav class="post-nav" aria-label="More notes">

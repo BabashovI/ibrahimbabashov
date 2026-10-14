@@ -71,27 +71,7 @@
       </header>
 
       <div class="post-body">
-<div style="text-align: justify;">
-&nbsp;&nbsp;&nbsp;</div>
-<div style="text-align: justify;">
-&nbsp;&nbsp;&nbsp; Hi every one in this post i will show you, how to reset&nbsp; forgot root password in RHEL_7 &amp; CentOS_7 . Short record of the prosses i will post later.</div>
-<div style="text-align: justify;">
-&nbsp;&nbsp;&nbsp; In previous post i used "init=/bin/sh" for resetting but now i will show another way of resetting root pass. Let's begin</div>
-<div style="text-align: justify;">
-&nbsp; &nbsp;&nbsp; First in grub loader menu tab&nbsp; 'e'&nbsp; enter edit boot options from here go to line beginig with 'linux16' in this line delete words 'rhgb', 'quite' and add&nbsp;</div>
-<div style="text-align: justify;">
-'rd.break' press 'Ctrl+x'&nbsp; and we boot in emergency mode where system mount to "sysroot" . Enter below commands:</div>
-<ol>
-<li>mount -o remount,rw /sysroot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;"> #remount as read write /sysroot</span></li>
-<li>chroot /sysroot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: blue;">#change root folder to sysroot</span></li>
-<li>passwd &nbsp; <span style="color: blue;">#for resetting root password</span></li>
-<li>touch /.autorelabel &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: blue;">#for selinux&nbsp;&nbsp;</span></li>
-<li>exit&nbsp;&nbsp;&nbsp; <span style="color: blue;">#twice enter exit</span></li>
-</ol>
-&nbsp; &nbsp; After above steps, you will success reset root password.&nbsp; <br />
-<div style="text-align: justify;">
-<br /></div>
-
+<p>Hi every one in this post i will show you, how to reset  forgot root password in RHEL_7 & CentOS_7 . Short record of the prosses i will post later.</p><pre>In previous post i used "init=/bin/sh" for resetting but now i will show another way of resetting root pass. Let's begin</pre><p>First in grub loader menu tab  'e'  enter edit boot options from here go to line beginig with 'linux16' in this line delete words 'rhgb', 'quite' and add</p><p>'rd.break' press 'Ctrl+x'  and we boot in emergency mode where system mount to "sysroot" . Enter below commands:</p><ol><li>mount -o remount,rw /sysroot       #remount as read write /sysroot</li><li>chroot /sysroot      #change root folder to sysroot</li><li>passwd   #for resetting root password</li><li>touch /.autorelabel         #for selinux  </li><li>exit    #twice enter exit</li></ol><p>After above steps, you will success reset root password.</p>
       </div>
 
       <nav class="post-nav" aria-label="More notes">

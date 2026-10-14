@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Docker basic commands (podman) — Ibrahim Babashov</title>
-  <meta name="description" content="Docker basic commands. Also use full for podman. docker search &lt;image-name&gt; - search for image in docker-hub docker run &lt;options&gt; &lt;image-name&gt; - by default doc…">
+  <meta name="description" content="Docker basic commands. Also use full for podman. docker search - search for image in docker-hub docker run - by default docker will run command foreground. For…">
   <meta name="author" content="Ibrahim Babashov">
   <meta name="theme-color" content="#07090f">
   <link rel="canonical" href="https://ibrahimbabashov.com/posts/docker-basic-commands-podman.html">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="ibrahimbabashov.com">
   <meta property="og:title" content="Docker basic commands (podman) — Ibrahim Babashov">
-  <meta property="og:description" content="Docker basic commands. Also use full for podman. docker search &lt;image-name&gt; - search for image in docker-hub docker run &lt;options&gt; &lt;image-name&gt; - by default doc…">
+  <meta property="og:description" content="Docker basic commands. Also use full for podman. docker search - search for image in docker-hub docker run - by default docker will run command foreground. For…">
   <meta property="og:url" content="https://ibrahimbabashov.com/posts/docker-basic-commands-podman.html">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Docker basic commands (podman) — Ibrahim Babashov">
-  <meta name="twitter:description" content="Docker basic commands. Also use full for podman. docker search &lt;image-name&gt; - search for image in docker-hub docker run &lt;options&gt; &lt;image-name&gt; - by default doc…">
+  <meta name="twitter:description" content="Docker basic commands. Also use full for podman. docker search - search for image in docker-hub docker run - by default docker will run command foreground. For…">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <script src="../js/theme-init.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,57 +71,34 @@
       </header>
 
       <div class="post-body">
-
-
-
-	
-	
-	
-	
-
-<p style="line-height: 100%; margin-bottom: 0in;">&nbsp;
-<font face="Liberation Mono, monospace">Docker basic commands. Also
-use full for podman.</font></p><ul><li>&nbsp;
-<code class="western"><font face="Liberation Mono, monospace">docker
-	search &lt;image-name&gt; - search for image in docker-hub</font></code><code class="western"><font face="Liberation Mono, monospace">&nbsp;</font></code></li></ul><ul><li><code class="western"><font face="Liberation Mono, monospace">docker
-	run &lt;options&gt; &lt;image-name&gt; - by default docker will run
-	command foreground. For running background use -d option, -</font></code><code class="western"><font face="Liberation Mono, monospace">it
-	</font></code><code class="western"><font face="Liberation Mono, monospace">interact
-	with the container instead of just seeing the output, --</font></code><code class="western"><font face="Liberation Mono, monospace">name
-	option for giving friendly name </font></code><code class="western"><font face="Liberation Mono, monospace">when
-	lunching</font></code><code class="western"><font face="Liberation Mono, monospace">
-	container</font></code></li></ul><ul><li><code class="western"><font face="Liberation Mono, monospace">docker
-	logs &lt;friendly-name|container-id&gt; - container standard err or
-	standard out messages</font></code><code class="western"><font face="Liberation Mono, monospace">&nbsp;</font></code></li></ul><ul><li><code class="western"><font face="Liberation Mono, monospace">docker
-	inspect &lt;friendly-name|container-id&gt; - more detailed
-	information about running container</font></code></li></ul><ul><li><code class="western"><font face="Liberation Mono, monospace">docker
-	ps - list all running docker containers</font></code><code class="western"><font face="Liberation Mono, monospace">&nbsp;</font></code></li></ul><ul><li><code class="western"><font face="Liberation Mono, monospace">docker
-	run </font></code><font face="Liberation Mono, monospace">-p
-	&lt;host-port&gt;:&lt;container-port&gt;  - </font><font face="Liberation Mono, monospace">define
-	ports you want to bind, when running conatiner</font></li></ul><ul><li><font face="Liberation Mono, monospace">d</font><font face="Liberation Mono, monospace">ocker
-	port </font><code class="western"><font face="Liberation Mono, monospace">&lt;friendly-name|container-id&gt;</font></code><font face="Liberation Mono, monospace">
-	- </font><code class="western"><font face="Liberation Mono, monospace">list
-	port mappings or  a specific port mapping for container</font></code><i><font face="Liberation Mono, monospace">&nbsp;</font></i></li></ul><ul><li><i><font face="Liberation Mono, monospace">-v
-	&lt;host-dir&gt;:&lt;container-dir&gt; - </font></i><i><font face="Liberation Mono, monospace"><span style="font-style: normal;">mounts
-	container-dir to host-dir</span></font></i></li></ul><ul><li><i><font face="Liberation Mono, monospace">docker
-	stop </font></i><code class="western"><font face="Liberation Mono, monospace">&lt;friendly-name|container-id&gt;
-	- </font></code><code class="western"><font face="Liberation Mono, monospace">stopping
-	running container</font></code><code class="western"><font face="Liberation Mono, monospace"><i><font face="Liberation Mono, monospace">docker
-	stop </font></i><code class="western"><font face="Liberation Mono, monospace">&lt;friendly-name|container-id&gt;
-	- </font></code><code class="western"><font face="Liberation Mono, monospace">stopping
-	running container</font></code></font></code></li></ul><ul><li><code class="western"><font face="Liberation Mono, monospace"><code class="western"><font face="Liberation Mono, monospace">docker images &amp; docker image ls - list pulled images&nbsp;</font></code></font></code></li><li><code class="western"><font face="Liberation Mono, monospace"><code class="western"><font face="Liberation Mono, monospace">docker image rm 'container id' - remove docker image&nbsp;</font></code></font></code>
-<code class="western"></code>
-</li></ul><p style="margin-bottom: 0in;"><span style="color: #2b00fe;">#docker run -it -d --rm --name linux1 ubuntu /bin/bash</span><br /><span style="color: red;"><span style="font-size: x-small;">CONTAINER ID&nbsp;&nbsp; IMAGE&nbsp;&nbsp;&nbsp;&nbsp; COMMAND&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CREATED&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; STATUS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PORTS&nbsp;&nbsp;&nbsp;&nbsp; NAMES</span><br />370804e50947&nbsp;&nbsp; ubuntu&nbsp;&nbsp;&nbsp; "/bin/bash"&nbsp;&nbsp; About a minute ago&nbsp;&nbsp; Up About a minute&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; linux1</span><br />-d - detach from container asap it started<br />--rm - removes a container after stopping<br />--name - container friendly name<br /><br />Shared Host File System (Volume Mounting)<br />docker run --rm -v ${PWD}:/myvol ubuntu /bin/bash -c "ls -lha &gt; /myvol/myfiles.txt"<br />-v - volume Mounting&nbsp; local:remote<br /><br />docker run -it --rm --name my-running-script php:7.2-cli /bin/bash<br /><br />docker run -it --rm -v ${PWD}:/myfiles -w /myfiles --name my-running-script php:7.2-cli /bin/bash<br />-w - working dir<br /><br />Port forwarding<br />docker run -d -p 8080:80 -v ${PWD}:/var/www/html&nbsp; php:7.2-apache<br />-p - port forwarding <br /><br />docker inspect cont_id<br />docker logs cont_id<br />docker image ls<br />docker ps<br /><br />Run container from dockerfile<br />docker build -t myphpapp:web .<br />docker run -p 8000:8000 myphpapp:web<br />-t - tagging image<br />
-
-</p>
-<p style="line-height: 100%; margin-bottom: 0in;">Copy from docker to local:</p><p style="line-height: 100%; margin-bottom: 0in;">docker container ls<br />docker cp contained_id:/(file location) (location on host)</p><p style="line-height: 100%; margin-bottom: 0in;">Dockerfile example:</p><div style="color: #d4d4d4; font-family: Menlo, Monaco, &quot;Courier New&quot;, monospace; font-size: 18px; font-weight: normal; line-height: 27px; white-space: pre;"><div><span style="background-color: white;"><span style="color: #c586c0;">FROM</span><span style="color: #d4d4d4;"> </span><span style="color: #4ec9b0;">ubuntu</span></span></div><span style="background-color: white;"></span><div><span style="background-color: white;"><span style="color: #c586c0;">EXPOSE</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">8000</span></span></div><div><span style="background-color: white;"><span style="color: #c586c0;">RUN</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">mkdir</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">/myproject</span></span></div><div><span style="background-color: white;"><span style="color: #c586c0;">RUN</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">apt</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">update</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">-y</span></span></div><div><span style="background-color: white;"><span style="color: #c586c0;">COPY</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">index.php</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">/myproject</span></span></div><div><span style="background-color: white;"><span style="color: #c586c0;">WORKDIR</span><span style="color: #d4d4d4;"> </span><span style="color: #9cdcfe;">/myproject</span></span></div><div><span style="background-color: white;"><span style="color: #6a9955;">#CMD ["php", "-S", "0.0.0.0:8000"]</span></span></div></div>
-
-<style type="text/css">
-		p { margin-bottom: 0.1in; line-height: 115%; background: transparent }
-		em { font-style: italic }
-		code.western { font-family: "Liberation Mono", monospace }
-		code.cjk { font-family: "Noto Sans Mono CJK SC", monospace }
-		code.ctl { font-family: "Liberation Mono", monospace }</style>
+<p> Docker basic commands. Also use full for podman.</p><ul><li> <code>docker search <image-name> - search for image in docker-hub</code></li><li><code>docker run <options> <image-name> - by default docker will run command foreground. For running background use -d option, -</code><code>it </code><code>interact with the container instead of just seeing the output, --</code><code>name option for giving friendly name </code><code>when lunching</code><code> container</code></li><li><code>docker logs <friendly-name|container-id> - container standard err or standard out messages</code></li><li><code>docker inspect <friendly-name|container-id> - more detailed information about running container</code></li><li><code>docker ps - list all running docker containers</code></li><li><code>docker run </code>-p <host-port>:<container-port> - define ports you want to bind, when running conatiner</li><li>docker port <code><friendly-name|container-id></code> - <code>list port mappings or a specific port mapping for container</code><i></i></li><li><i>-v <host-dir>:<container-dir> - </i><i>mounts container-dir to host-dir</i></li><li><i>docker stop </i><code><friendly-name|container-id> - </code><code>stopping running container</code><code><i>docker stop </i><code><friendly-name|container-id> - </code><code>stopping running container</code></code></li><li><code><code>docker images & docker image ls - list pulled images </code></code></li><li><code><code>docker image rm 'container id' - remove docker image </code></code></li></ul><pre>#docker run -it -d --rm --name linux1 ubuntu /bin/bash
+CONTAINER ID   IMAGE     COMMAND       CREATED              STATUS              PORTS     NAMES
+370804e50947   ubuntu    "/bin/bash"   About a minute ago   Up About a minute             linux1
+-d - detach from container asap it started
+--rm - removes a container after stopping
+--name - container friendly name
+Shared Host File System (Volume Mounting)
+docker run --rm -v ${PWD}:/myvol ubuntu /bin/bash -c "ls -lha > /myvol/myfiles.txt"
+-v - volume Mounting  local:remote
+docker run -it --rm --name my-running-script php:7.2-cli /bin/bash
+docker run -it --rm -v ${PWD}:/myfiles -w /myfiles --name my-running-script php:7.2-cli /bin/bash
+-w - working dir
+Port forwarding
+docker run -d -p 8080:80 -v ${PWD}:/var/www/html  php:7.2-apache
+-p - port forwarding
+docker inspect cont_id
+docker logs cont_id
+docker image ls
+docker ps
+Run container from dockerfile
+docker build -t myphpapp:web .
+docker run -p 8000:8000 myphpapp:web
+-t - tagging image</pre><p>Copy from docker to local:</p><p>docker container ls<br>docker cp contained_id:/(file location) (location on host)</p><p>Dockerfile example:</p><pre>FROM ubuntu</pre><pre>EXPOSE 8000
+RUN mkdir /myproject
+RUN apt update -y
+COPY index.php /myproject
+WORKDIR /myproject
+#CMD ["php", "-S", "0.0.0.0:8000"]</pre>
       </div>
 
       <nav class="post-nav" aria-label="More notes">

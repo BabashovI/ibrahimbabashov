@@ -71,71 +71,7 @@
       </header>
 
       <div class="post-body">
-&nbsp;&nbsp;&nbsp; <span><span style="font-family: verdana; font-size: small;">In
- this post i will show how to reset root password in ESXi 5.5. For this 
-first we need any bootable linux distributor. In my example i used 
-Ubuntu 16.04.<br />&nbsp;&nbsp;&nbsp;
-Boot from Ubuntu disk. Select try Ubuntu, wait for loading. After full loading open Terminal.<br />
-Type <span style="color: red;"><i>fdisk -l</i></span> for list all
- partitions hypervisor/system image is located on the first 250 MB 
-partition (/dev/sda5) which contains the state.tgz file. Mount /dev/sda5
- to /mnt <i><span style="color: red;">sudo -s mount /dev/sda5 /mnt.</span></i> Go to the /mnt<span style="color: red;"><i> cd /mnt</i> <span style="color: black;">. Copy state.tgz to /tmp folder </span></span><i><span style="color: red;">cp state.tgz /tmp</span> ,</i> <i>cd /tmp.</i> Unarchive state.tgz <span style="color: red;"><i>tar xzf state.tgz </i><span style="color: black;">then</span><i>&nbsp;</i> <i>tar xzf local.tgz</i></span> Go to the /etc directory in /tmp folder&nbsp; <span style="color: red;"><i>cd etc/<span style="color: black;">. For deleting resetting password open <span style="color: red;">shadow</span> file with </span>nano shadow&nbsp;</i></span> delete the password hash of ESXi root account. Close nano editor. Re add etc/ folder to local.tgz : <span style="color: red;"><i>tar czf local.tgz etc</i></span> after it readd local.tgz to state.tgz: <i><span style="color: red;">tar czf state.tgz local.tgz</span> . </i>Copy state.tgz mnt/ folder: <i><span style="color: red;">cp state.tgz /mnt/</span></i> . <span style="color: red;"><i>umount /mnt&nbsp;<span style="color: black;">.</span> init 6</i></span> for reboot</span></span><span style="color: black;"><span><span style="font-family: verdana; font-size: small;">.</span></span><br />
-</span><br />
-<br />
-<footer class="entry-footer"><div class="entry-meta">
-<br /></div>
-<div class="separator" style="clear: both; text-align: center;">
-<iframe allowfullscreen="" class="YOUTUBE-iframe-video" data-thumbnail-src="../images/reset-root-pass-in-esxi-55-b0963f06f5.jpg" frameborder="0" height="266" src="https://www.youtube.com/embed/z48eT6gy-vQ?feature=player_embedded" width="320"></iframe></div>
-<div class="entry-meta">
-<br /></div>
-</footer><br />
-<div class="content-sidebar-wrap">
-<br />
-<aside aria-label="Primary Sidebar" class="sidebar sidebar-primary widget-area" itemscope="" itemtype="https://schema.org/WPSideBar" role="complementary"><section class="widget jr-insta-slider" id="jr_insta_slider-6"><div class="widget-wrap">
-<div class="pllexislider pllexislider-normal instaslider-nr-6">
-<ul class="no-bullet slides">
-<li style="display: block; float: left; margin-right: -100%; opacity: 0; position: relative; width: 100%; z-index: 1;"><a href="https://www.instagram.com/p/BjZyBpTlFTZ/" target="_blank" title="b pretty prettygirls"><img alt="b pretty prettygirls" draggable="false" src="https://scontent-lax3-2.cdninstagram.com/vp/0a3886cd9906624e27c89c4c6a104080/5C720D07/t51.2885-15/e35/s320x320/33108597_1708276662587253_4892536957864771584_n.jpg" title="b pretty prettygirls"  loading="lazy" decoding="async"/></a><div class="jr-insta-datacontainer">
-<span class="jr-insta-time">6 months ago</span>
-</div>
-</li>
-<li style="display: block; float: left; margin-right: -100%; opacity: 0; position: relative; width: 100%; z-index: 1;"><a href="https://www.instagram.com/p/BjfQx_GFagX/" target="_blank" title="origami"><img alt="origami" draggable="false" src="https://scontent-lax3-2.cdninstagram.com/vp/4d8623714ba8cc4d7bba0ae3c87c106e/5C6D90AC/t51.2885-15/e35/s320x320/32744662_1764540756957270_7153784582909722624_n.jpg" title="origami"  loading="lazy" decoding="async"/></a><div class="jr-insta-datacontainer">
-<span class="jr-insta-time">5 months ago</span>
-</div>
-</li>
-<li style="display: block; float: left; margin-right: -100%; opacity: 0; position: relative; width: 100%; z-index: 1;"><a href="https://www.instagram.com/p/BkUpna2FMfe/" target="_blank" title="baku vsco vscobaku vscoaward nikon nikonphotography nikond7100 byme photography"><img alt="baku vsco vscobaku vscoaward nikon nikonphotography nikond7100 byme photography" draggable="false" src="https://scontent-lax3-2.cdninstagram.com/vp/42a5e6b7e87366f47b0eb02487022bc7/5C790A60/t51.2885-15/e35/c180.0.720.720/s320x320/33842014_2086178004972918_7579606718879891456_n.jpg" title="baku vsco vscobaku vscoaward nikon nikonphotography nikond7100 byme photography"  loading="lazy" decoding="async"/></a><div class="jr-insta-datacontainer">
-<span class="jr-insta-time">5 months ago</span>
-</div>
-</li>
-<li style="display: block; float: left; margin-right: -100%; opacity: 0; position: relative; width: 100%; z-index: 1;"><a href="https://www.instagram.com/p/BkUp65ulMkk/" target="_blank" title="nikon nikonphotography vsco love togetherforever instalove vscocam nikond7100 byme forever"><img alt="nikon nikonphotography vsco love togetherforever instalove vscocam nikond7100 byme forever" draggable="false" src="https://scontent-lax3-2.cdninstagram.com/vp/b554adb5ee8f9fd43d57d8b453d0915d/5C6E5E9D/t51.2885-15/e35/c0.73.587.587/s320x320/34423530_557583084637260_3243964888585863168_n.jpg" title="nikon nikonphotography vsco love togetherforever instalove vscocam nikond7100 byme forever"  loading="lazy" decoding="async"/></a><div class="jr-insta-datacontainer">
-<span class="jr-insta-time">5 months ago</span>
-</div>
-</li>
-<li style="display: block; float: left; margin-right: -100%; opacity: 0; position: relative; width: 100%; z-index: 1;"><a href="https://www.instagram.com/p/BkVL-HUlO6w/" target="_blank" title="nikon nikonphotography nikond7100 photography water vscocam vscobaku vsco byme 2018"><img alt="nikon nikonphotography nikond7100 photography water vscocam vscobaku vsco byme 2018" draggable="false" src="https://scontent-lax3-2.cdninstagram.com/vp/fc656541b8dcbad81c9e6615a79b96e6/5C861817/t51.2885-15/e35/c83.0.359.359/s320x320/35948718_440795216395902_6632993092163076096_n.jpg" title="nikon nikonphotography nikond7100 photography water vscocam vscobaku vsco byme 2018"  loading="lazy" decoding="async"/></a><div class="jr-insta-datacontainer">
-<span class="jr-insta-time">5 months ago</span>
-</div>
-</li>
-<li style="display: block; float: left; margin-right: -100%; opacity: 0; position: relative; width: 100%; z-index: 1;"><img alt="eiffeltower paris tourism vscocam nikon d7100 by nikonphotography nikon eurotrip" draggable="false" src="https://scontent-lax3-2.cdninstagram.com/vp/a2b472e8040dc7913029f97043a90479/5C83A32F/t51.2885-15/e35/c0.106.853.853/s320x320/37921527_513934219047846_7604030071883431936_n.jpg" title="eiffeltower paris tourism vscocam nikon d7100 by nikonphotography nikon eurotrip"  loading="lazy" decoding="async"/><div class="jr-insta-datacontainer">
-<span class="jr-insta-time">3 months ago</span>
-</div>
-</li>
-<li style="display: block; float: left; margin-right: -100%; opacity: 0; position: relative; width: 100%; z-index: 1;"><div class="jr-insta-datacontainer">
-<span class="jr-insta-time">3 months ago</span>
-</div>
-</li>
-<li style="display: block; float: left; margin-right: -100%; opacity: 0; position: relative; width: 100%; z-index: 1;"><div class="jr-insta-datacontainer">
-<span class="jr-insta-time">2 months ago</span>
-</div>
-</li>
-<li style="display: block; float: left; margin-right: -100%; opacity: 0; position: relative; width: 100%; z-index: 1;"><div class="jr-insta-datacontainer">
-<span class="jr-insta-time">1 week ago</span>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</section>
-</aside></div>
-
+<p>In this post i will show how to reset root password in ESXi 5.5. For this first we need any bootable linux distributor. In my example i used Ubuntu 16.04.</p><p>Boot from Ubuntu disk. Select try Ubuntu, wait for loading. After full loading open Terminal.</p><p>Type <i>fdisk -l</i> for list all partitions hypervisor/system image is located on the first 250 MB partition (/dev/sda5) which contains the state.tgz file. Mount /dev/sda5 to /mnt <i>sudo -s mount /dev/sda5 /mnt.</i> Go to the /mnt<i> cd /mnt</i> . Copy state.tgz to /tmp folder <i>cp state.tgz /tmp ,</i> <i>cd /tmp.</i> Unarchive state.tgz <i>tar xzf state.tgz </i>then<i></i> <i>tar xzf local.tgz</i> Go to the /etc directory in /tmp folder  <i>cd etc/. For deleting resetting password open shadow file with nano shadow </i> delete the password hash of ESXi root account. Close nano editor. Re add etc/ folder to local.tgz : <i>tar czf local.tgz etc</i> after it readd local.tgz to state.tgz: <i>tar czf state.tgz local.tgz . </i>Copy state.tgz mnt/ folder: <i>cp state.tgz /mnt/</i> . <i>umount /mnt . init 6</i> for reboot.</p><ul><li><a href="https://www.instagram.com/p/BjZyBpTlFTZ/" rel="noopener" target="_blank"><img src="https://scontent-lax3-2.cdninstagram.com/vp/0a3886cd9906624e27c89c4c6a104080/5C720D07/t51.2885-15/e35/s320x320/33108597_1708276662587253_4892536957864771584_n.jpg" alt="b pretty prettygirls" loading="lazy" decoding="async"></a><p>6 months ago</p></li><li><a href="https://www.instagram.com/p/BjfQx_GFagX/" rel="noopener" target="_blank"><img src="https://scontent-lax3-2.cdninstagram.com/vp/4d8623714ba8cc4d7bba0ae3c87c106e/5C6D90AC/t51.2885-15/e35/s320x320/32744662_1764540756957270_7153784582909722624_n.jpg" alt="origami" loading="lazy" decoding="async"></a><p>5 months ago</p></li><li><a href="https://www.instagram.com/p/BkUpna2FMfe/" rel="noopener" target="_blank"><img src="https://scontent-lax3-2.cdninstagram.com/vp/42a5e6b7e87366f47b0eb02487022bc7/5C790A60/t51.2885-15/e35/c180.0.720.720/s320x320/33842014_2086178004972918_7579606718879891456_n.jpg" alt="baku vsco vscobaku vscoaward nikon nikonphotography nikond7100 byme photography" loading="lazy" decoding="async"></a><p>5 months ago</p></li><li><a href="https://www.instagram.com/p/BkUp65ulMkk/" rel="noopener" target="_blank"><img src="https://scontent-lax3-2.cdninstagram.com/vp/b554adb5ee8f9fd43d57d8b453d0915d/5C6E5E9D/t51.2885-15/e35/c0.73.587.587/s320x320/34423530_557583084637260_3243964888585863168_n.jpg" alt="nikon nikonphotography vsco love togetherforever instalove vscocam nikond7100 byme forever" loading="lazy" decoding="async"></a><p>5 months ago</p></li><li><a href="https://www.instagram.com/p/BkVL-HUlO6w/" rel="noopener" target="_blank"><img src="https://scontent-lax3-2.cdninstagram.com/vp/fc656541b8dcbad81c9e6615a79b96e6/5C861817/t51.2885-15/e35/c83.0.359.359/s320x320/35948718_440795216395902_6632993092163076096_n.jpg" alt="nikon nikonphotography nikond7100 photography water vscocam vscobaku vsco byme 2018" loading="lazy" decoding="async"></a><p>5 months ago</p></li><li><img src="https://scontent-lax3-2.cdninstagram.com/vp/a2b472e8040dc7913029f97043a90479/5C83A32F/t51.2885-15/e35/c0.106.853.853/s320x320/37921527_513934219047846_7604030071883431936_n.jpg" alt="eiffeltower paris tourism vscocam nikon d7100 by nikonphotography nikon eurotrip" loading="lazy" decoding="async"><p>3 months ago</p></li><li><p>3 months ago</p></li><li><p>2 months ago</p></li><li><p>1 week ago</p></li></ul>
       </div>
 
       <nav class="post-nav" aria-label="More notes">

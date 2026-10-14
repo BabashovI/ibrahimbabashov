@@ -591,7 +591,8 @@ html[data-theme="light"] .hero::after { opacity: 0.12; }
 }
 
 .post-body h2::before,
-.post-body h3::before {
+.post-body h3::before,
+.post-body h4::before {
   content: "// ";
   color: var(--accent-2);
   font-family: var(--font-mono);

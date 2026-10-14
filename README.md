@@ -50,8 +50,14 @@ python3 tools/build_posts.py
 
 What it does:
 
+- parses the old markup and **strips inline styles, colours, backgrounds and
+  fonts** (they were unreadable on the dark theme) and unwraps stray `<span>`
+- **recovers structure**: `white-space:pre` runs become real `<pre>` code
+  blocks, `●`/`○` runs become `<ul>`, numbered runs `<ol>`, prose `<p>`, and
+  obvious section labels `<h3>`
+- rewrites `<br>`-jammed command runs into `<pre>` blocks
 - demotes headings inside post bodies (one `<h1>` per page)
-- wraps wide tables in a scroll container
+- wraps wide tables in a scroll container and drops empty layout tables
 - adds `alt` + `loading="lazy"` to every image
 - extracts inline base64 images and downloads remote ones into `images/`
 - writes the SEO head (canonical, Open Graph, Twitter, favicon)

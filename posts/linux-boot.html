@@ -71,126 +71,9 @@
       </header>
 
       <div class="post-body">
-<header class="entry-header">
-  <h2 class="entry-title">
-</h1>
-<div class="entry-meta">
-    <span class="posted-on"><a href="https://www.crybit.com/linux-boot-process/" rel="bookmark"><time class="entry-date published" datetime="2019-01-06T09:33:13+05:30"></time></a></span><span class="comments-link"></span>   </div>
-</header>
+<p>In this article, I am going to explain the booting process in detail. I can assure you that, you will get a clear idea about the Linux booting process after reading this post. I would like to divide the Linux booting in the following 5 steps:</p><img src="https://crybit.com/wp-content/uploads/2017/01/Linux-booting-process.png" width="519" height="363" alt="Linux Boot" loading="lazy" decoding="async"><p>From power up/reset to login prompt, we can mainly divide the Linux booting process in to five areas. The <strong>BIOS</strong>, <strong>Stage I boot loader</strong>, <strong>Stage II boot loader</strong>, <strong>Kernel</strong> and <strong>Init</strong>. These are the important areas behind a booting process.</p><p>Let us start the Linux booting process with BIOS.</p><h3><strong>Step 1. BIOS (Basic Input Output System)</strong></h3><pre>POST-power on self test which bios loads  checking for hardware .</pre><h3><strong>Step 2. Stage 1 boot loader (MBR)</strong></h3><p><strong>Master Boot Record</strong>, is the first place where boot loaders begins to start. MBR is a 512 byte sector located in the first sector of hard disk. <strong>MBR</strong> contains both program code and partition table details. Please see the image added below:</p><img src="https://crybit.com/wp-content/uploads/2017/01/Linux-booting-process-MBR.png" width="520" height="246" alt="Linux Boot (image 2)" loading="lazy" decoding="async"><p>When allocating disk space for a partition, the first sector or data unit for each partition is always reserved for programmable code used in booting process. The very first sector of the hard disk is reserved for same purpose and it’s called the <strong>Master Boot Record</strong>. In case of a mechanical spinning disk, sector 1 of cylinder 0, head 0.</p><p>First 446 byte are the primary boot loader which contains both executable code and error message text.</p><p>Next 64 bytes contains the partition table. This section contains records for each of four partitions. In the above image P1 represents Partition 1, P2 for Partition 2 and so on.</p><p><strong>4 x 16 bytes = 64 bytes</strong></p><p>The last two bytes known as magic number (0xAA55). This number is used for the validation check of MBR.</p><p>When booting from a hard disk, the BIOS starts by loading and executing boot loader code. The MBR size is not enough sometimes to execute the complete boot loader code. Because, its size is larger than the available space in MBR. So booting has to be done in different stages. These stages are different in different boot loader on your system. Yeah, it’s time to move over to Stage 2 boot loader</p><h3><strong>Step 3. Stage 2 boot loader.</strong></h3><p>It is called the kernel loader. The main task at this stage is to load the Linux kernel.</p><p>Different boot loaders</p><pre>LILO : Linux Loader.
 
- 
-  <div class="post-views post-5731 entry-meta">
-   <span class="post-views-icon dashicons dashicons-chart-bar"></span> <span class="post-views-count"></span>
-   </div>
-<div>
-<em><strong></strong></em></div>
-<div class="code-block code-block-8" style="clear: both; display: block; margin: 8px auto; text-align: center;">
-
-
-
-</div>
-<div>
-&nbsp;&nbsp;&nbsp;&nbsp; In this article, I am going to explain the 
-booting process in detail. I can assure you that, you will get a clear 
-idea about the Linux booting process after reading this post. I would 
-like to divide the Linux booting in the following 5 steps:</div>
-<div>
-<img alt="" class="aligncenter wp-image-5076" height="363" src="https://crybit.com/wp-content/uploads/2017/01/Linux-booting-process.png" width="519"  loading="lazy" decoding="async"/></div>
-<div>
-From power up/reset to login prompt, we can mainly divide the Linux booting process in to five areas. The <strong>BIOS</strong>, <strong>Stage I boot loader</strong>, <strong>Stage II boot loader</strong>, <strong>Kernel</strong> and <strong>Init</strong>. These are the important areas behind a booting process.</div>
-<div>
-Let us start the Linux booting process with BIOS.</div>
-<h3>
-<strong>Step 1. BIOS (Basic Input Output System)</strong></h2>
-POST-power on self test which bios loads&nbsp; checking for hardware .<br /><h3>
-<strong>Step 2. Stage 1 boot loader (MBR)</strong></h2>
-<div>
-<strong>Master Boot Record</strong>, is the first place where boot loaders begins to start. MBR&nbsp;is a 512 byte sector located in the first sector of hard disk.&nbsp;<strong>MBR</strong> contains both program code and partition table details. Please see the image added below:</div>
-<div>
-<img alt="" class="aligncenter wp-image-5082" height="246" src="https://crybit.com/wp-content/uploads/2017/01/Linux-booting-process-MBR.png" width="520"  loading="lazy" decoding="async"/></div>
-<div>
-When allocating disk space for a partition,
- the first sector or data unit for each partition is always reserved for
- programmable code used in booting process. The very first sector of the
- hard disk is reserved for same purpose and it’s called the <strong>Master Boot Record</strong>.&nbsp;In case of a mechanical spinning disk, sector 1 of cylinder 0, head 0.</div>
-<div>
-<br /></div>
-<div>
-First 446 byte are the primary boot loader which contains both executable code and error message text.</div>
-<div>
-Next 64 bytes contains the partition table.
- This section contains records for each of four partitions. In the above
- image P1 represents Partition 1, P2 for Partition 2 and so on.</div>
-<div>
-<strong>4 x 16 bytes = 64 bytes</strong></div>
-<div>
-The last two bytes known as magic number (0xAA55). This number is used for the validation check of MBR.</div>
-<div>
-When booting from a hard disk, the BIOS 
-starts by loading and executing boot loader code. The MBR size is not 
-enough sometimes to execute the complete boot loader code. Because, its 
-size is larger than the available space in MBR. So booting has to be 
-done in different stages. These stages are different in different boot 
-loader on your system. Yeah, it’s time to move over to Stage 2 boot 
-loader</div>
-<h3>
-<strong>Step 3. Stage 2 boot loader.</strong></h2>
-<div>
-It is called the kernel loader. The main task at this stage is to load the Linux kernel.</div>
-<div>
-Different boot loaders</div>
-<div>
-<strong>LILO : Linux Loader.</strong><br />
-<strong>GRUB : Grand Unified Boot Loader.</strong></div>
-<div>
-We use <strong>GRUB</strong>, as <strong>LILO</strong>
- has some disadvantages. One great thing about GRUB is it has knowledge 
-about the Linux file system. GRUB can load kernel from an ext2 or ext3 
-file system.</div>
-<div>
-As we mentioned, the boot loader code is 
-executing in different stages because of the size limit of MBR. This 
-stages are different in different GRUB version. These stages are mainly 
-listed as follows:</div>
-<ol>
-<li>Stage 1 and Stage 2 : These are two essential stages</li>
-<li>Stage 1.5 : An optional stage</li>
-</ol>
-<div>
-Stage 1 is an essential image used to boot 
-up a Linux machine. Usually, this is embedded in an MBR or the boot 
-sector of the partition. The maximum size of stage one image is 512 
-bytes, because of the MBR size limit.</div>
-<div>
-Stage 1 does not understand file system. It
- loads stage 2 or stage 1.5 from local disk for further booting process.
- So it knows Linux file system details.</div>
-<div>
-<img alt="" class="aligncenter wp-image-5744" height="279" src="https://crybit.com/wp-content/uploads/2017/07/boot-stages.png" width="520"  loading="lazy" decoding="async"/></div>
-<div>
-Stage 2, this is the core image of GRUB. 
-Usually, you can find this stage in a file system (Not necessary). Stage
- 1.5 is actually a bridge between Stage 1 and Stage 2. &nbsp;Stage 1.5 will 
-be installed into an area right after the MBR area.</div>
-<div>
-Boot loaders are loading from Stage 2. So 
-you must know some basic details of Linux boot loaders. The common boot 
-loaders in Linux are listed below:</div>
-<ol>
-<li>LILO (Linux Loader)</li>
-<li>GRUB (Grand Unified Boot Loader)</li>
-</ol>
-<div>
-Nowadays almost all Linux distributions are using GRUB as boot loader. The latest GRUB is GRUB v2.</div>
-<div>
-Both LILO and GRUB can configure as a 
-primary boot loader (on MBR) or the secondary boot loader (on a bootable
- partition). Both work with supporting OS such as Linux, FreeBSD, 
-NetBSD. They can also work with unsupported OS like Microsoft Windows. 
-That’s a great thing!</div>
-<div>
-Configuration file for LILO is /etc/lilo.conf and some configuration directives are listed below:</div>
-<pre class="SCREEN"><span style="color: maroon;"><strong><tt class="COMMAND">boot=/dev/hda
+GRUB : Grand Unified Boot Loader.</pre><p>We use <strong>GRUB</strong>, as <strong>LILO</strong> has some disadvantages. One great thing about GRUB is it has knowledge about the Linux file system. GRUB can load kernel from an ext2 or ext3 file system.</p><p>As we mentioned, the boot loader code is executing in different stages because of the size limit of MBR. This stages are different in different GRUB version. These stages are mainly listed as follows:</p><ol><li>Stage 1 and Stage 2 : These are two essential stages</li><li>Stage 1.5 : An optional stage</li></ol><p>Stage 1 is an essential image used to boot up a Linux machine. Usually, this is embedded in an MBR or the boot sector of the partition. The maximum size of stage one image is 512 bytes, because of the MBR size limit.</p><p>Stage 1 does not understand file system. It loads stage 2 or stage 1.5 from local disk for further booting process. So it knows Linux file system details.</p><img src="https://crybit.com/wp-content/uploads/2017/07/boot-stages.png" width="520" height="279" alt="Linux Boot (image 3)" loading="lazy" decoding="async"><p>Stage 2, this is the core image of GRUB. Usually, you can find this stage in a file system (Not necessary). Stage 1.5 is actually a bridge between Stage 1 and Stage 2.  Stage 1.5 will be installed into an area right after the MBR area.</p><p>Boot loaders are loading from Stage 2. So you must know some basic details of Linux boot loaders. The common boot loaders in Linux are listed below:</p><ol><li>LILO (Linux Loader)</li><li>GRUB (Grand Unified Boot Loader)</li></ol><p>Nowadays almost all Linux distributions are using GRUB as boot loader. The latest GRUB is GRUB v2.</p><p>Both LILO and GRUB can configure as a primary boot loader (on MBR) or the secondary boot loader (on a bootable partition). Both work with supporting OS such as Linux, FreeBSD, NetBSD. They can also work with unsupported OS like Microsoft Windows. That’s a great thing!</p><p>Configuration file for LILO is /etc/lilo.conf and some configuration directives are listed below:</p><pre>boot=/dev/hda
 map=/boot/map
 install=/boot/boot.b
 prompt
@@ -206,19 +89,7 @@ image=/boot/vmlinuz-2.4.0-0.43.6
  root=/dev/hda5
 
 other=/dev/hda1
- label=dos</tt></strong></span></pre>
-<div>
-Commonly using boot loader is GRUB and its 
-configuration is also listed under the etc folder. &nbsp;GRUB has two 
-versions. GRUB v1 and the latest GRUB v2. There are a lot of changes in 
-these two versions of GRUB.</div>
-<h3>
-<strong>GRUB v1 – /etc/grub.conf</strong></h2>
-<div>
-This configuration is actually a link 
-to&nbsp;/boot/grub/grub.conf. All kernel details are included in this 
-configuration file. &nbsp;Sample entries are pasted below:</div>
-<pre><span style="color: maroon;"><strong># grub.conf generated by anaconda
+ label=dos</pre><p>Commonly using boot loader is GRUB and its configuration is also listed under the etc folder.  GRUB has two versions. GRUB v1 and the latest GRUB v2. There are a lot of changes in these two versions of GRUB.</p><h3><strong>GRUB v1 – /etc/grub.conf</strong></h3><p>This configuration is actually a link to /boot/grub/grub.conf. All kernel details are included in this configuration file.  Sample entries are pasted below:</p><pre># grub.conf generated by anaconda
 #
 # Note that you do not have to rerun grub after making changes to this file
 # NOTICE: You have a /boot partition. This means that
@@ -234,18 +105,7 @@ hiddenmenu
 title CloudLinux Server (2.6.32-673.26.1.lve1.4.27.el6.x86_64)
 root (hd0,0)
 kernel /vmlinuz-2.6.32-673.26.1.lve1.4.27.el6.x86_64 ro root=UUID=15f2bf27-2e16-4b6f-bc86-fa74314aa8d5 rd_NO_LUKS rd_NO_LVM LANG=en_US.UTF-8 rd_NO_MD SYSFONT=latarcyrheb-sun16 crashkernel=auto KEYBOARDTYPE=pc KEYTABLE=us rd_NO_DM rhgb quiet nohz=off
-initrd /initramfs-2.6.32-673.26.1.lve1.4.27.el6.x86_64.img
-</strong></span></pre>
-<h3>
-<strong>GRUB v2 –&nbsp;/etc/grub2.cfg</strong></h2>
-<div>
-This is actually a link to&nbsp;<strong>/boot/grub2/grub.cfg</strong>.
- The main difference between GRUB v1 and GRUB v2 is, we can not edit the
- configuration file for changing the kernel and other settings. However,
- you can use different&nbsp;grub2-* commands for changing GRUB settings.</div>
-<div>
-A sample configuration is pasted below:</div>
-<pre><span style="color: maroon;"><strong>terminal_output console
+initrd /initramfs-2.6.32-673.26.1.lve1.4.27.el6.x86_64.img</pre><h3><strong>GRUB v2 – /etc/grub2.cfg</strong></h3><p>This is actually a link to <strong>/boot/grub2/grub.cfg</strong>. The main difference between GRUB v1 and GRUB v2 is, we can not edit the configuration file for changing the kernel and other settings. However, you can use different grub2-* commands for changing GRUB settings.</p><p>A sample configuration is pasted below:</p><pre>terminal_output console
 if [ x$feature_timeout_style = xy ] ; then
 set timeout_style=menu
 set timeout=5
@@ -262,57 +122,7 @@ set gfxpayload=keep
 insmod gzio
 insmod part_msdos
 insmod ext2
-set root='hd0,msdos1'
-</strong></span></pre>
-<div>
-The line starting from “menuentry” defines Kernels.</div>
-<div>
-</div>
-<div>
-Don’t forget, we are at stage 2 of Linux 
-booting process&nbsp; In stage 2, GRUB is loaded from a known location in 
-boot file system (<strong>/boot/grub</strong>).</div>
-<div>
-This stage loads other required drives and 
-kernel modules before reading the GRUB configuration file and displaying
- the boot menu. The familiar GRUB menu is now displayed on the monitor. 
-You can select the kernel from there.</div>
-<div>
-<img alt="" class="aligncenter wp-image-5748" height="300" src="https://crybit.com/wp-content/uploads/2017/07/select-linux-kernel-in-grub2-boot-loader-on-ubuntu-14.04.png" width="400"  loading="lazy" decoding="async"/></div>
-<h3>
-<strong>Step 4. &nbsp;Kernel stage</strong></h2>
-<div>
-Here the kernel stage begins. Kernel is in 
-compressed format. We can select the kernel from the GRUB menu. If not 
-selected, the GRUB automatically load the default one in its 
-configuration. We can change the default kernel details from the GRUB 
-configuration.</div>
-<div>
-The kernel you selected is now loaded into 
-the memory. An image file containing the basic root file system with all
- kernel modules are then loaded into the memory. This image file is 
-located under /boot and it’s known as <strong>initramfs</strong>.</div>
-<div>
-<strong>Initramfs</strong>, abbreviated from “initial RAM file system”, is the successor of <strong>initrd</strong>
- “initial ramdisk”. This image file contains the initial file system. 
-The GRUB starts the kernel and tells the memory address of this image 
-file. The kernel then mount this image file as a starter memory based 
-root file system.</div>
-<div>
-The kernel then starts to detect the 
-system’s hardware. The root file system on disk takes over from the one 
-in memory. The boot process then starts INIT (SYSTEMD) and the software 
-daemons according to the Sys Admin’s settings. This can be done at next 
-stages.</div>
-<h3>
-<strong>Step 5. INIT</strong></h2>
-<div>
-The kernel, once it is loaded in step 4, it finds&nbsp;<b class="command">init</b>&nbsp;in&nbsp;<tt class="filename">sbin</tt>&nbsp;(<strong>/sbin/init</strong>) and executes it. [<span style="color: grey;"><strong>In RHEL/CentOS 7 /sbin/init is linked to ../lib/systemd/systemd</strong></span>]. When init starts, it become the first or parent process on your Linux machine/server.</div>
-<div>
-The first thing&nbsp;<b class="command">init</b>&nbsp;does is reading the initialization file,&nbsp;<strong><tt class="filename">/etc/inittab</tt></strong>. This instructs&nbsp;<b class="command">init</b>&nbsp;to
- read an initial configuration script for the environment, which sets 
-the path, starts swapping, checks the file systems, and so on. From the&nbsp;<tt class="filename"><strong>/etc/inittab</strong>&nbsp;</tt>system will find the run level selected and start services&nbsp;by looking in the appropriate&nbsp;<tt class="filename">rc</tt>&nbsp;directory for that run level.</div>
-
+set root='hd0,msdos1'</pre><p>The line starting from “menuentry” defines Kernels.</p><p>Don’t forget, we are at stage 2 of Linux booting process  In stage 2, GRUB is loaded from a known location in boot file system (<strong>/boot/grub</strong>).</p><p>This stage loads other required drives and kernel modules before reading the GRUB configuration file and displaying the boot menu. The familiar GRUB menu is now displayed on the monitor. You can select the kernel from there.</p><img src="https://crybit.com/wp-content/uploads/2017/07/select-linux-kernel-in-grub2-boot-loader-on-ubuntu-14.04.png" width="400" height="300" alt="Linux Boot (image 4)" loading="lazy" decoding="async"><h3><strong>Step 4.  Kernel stage</strong></h3><p>Here the kernel stage begins. Kernel is in compressed format. We can select the kernel from the GRUB menu. If not selected, the GRUB automatically load the default one in its configuration. We can change the default kernel details from the GRUB configuration.</p><p>The kernel you selected is now loaded into the memory. An image file containing the basic root file system with all kernel modules are then loaded into the memory. This image file is located under /boot and it’s known as <strong>initramfs</strong>.</p><p><strong>Initramfs</strong>, abbreviated from “initial RAM file system”, is the successor of <strong>initrd</strong> “initial ramdisk”. This image file contains the initial file system. The GRUB starts the kernel and tells the memory address of this image file. The kernel then mount this image file as a starter memory based root file system.</p><p>The kernel then starts to detect the system’s hardware. The root file system on disk takes over from the one in memory. The boot process then starts INIT (SYSTEMD) and the software daemons according to the Sys Admin’s settings. This can be done at next stages.</p><h3><strong>Step 5. INIT</strong></h3><p>The kernel, once it is loaded in step 4, it finds <b>init</b> in sbin (<strong>/sbin/init</strong>) and executes it. [<strong>In RHEL/CentOS 7 /sbin/init is linked to ../lib/systemd/systemd</strong>]. When init starts, it become the first or parent process on your Linux machine/server.</p><p>The first thing <b>init</b> does is reading the initialization file, <strong>/etc/inittab</strong>. This instructs <b>init</b> to read an initial configuration script for the environment, which sets the path, starts swapping, checks the file systems, and so on. From the <strong>/etc/inittab</strong> system will find the run level selected and start services by looking in the appropriate rc directory for that run level.</p>
       </div>
 
       <nav class="post-nav" aria-label="More notes">
