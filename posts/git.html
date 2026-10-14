@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GIT — Ibrahim Babashov</title>
+  <meta name="description" content="To share this code with your teammates, you’ll want to create a shared Git repository that you can all access. One way to do this is to use GitHub. Head over t…">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="../index.html" class="brand">ibrahimbabashov<span class="brand-dot">.com</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../blog.html" aria-current="page">Blog</a></li>
+        <li><a href="../contact.html" class="btn btn-sm">Contact</a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="page container post">
+      <header class="post-header">
+        <h1>GIT</h1>
+        <p class="card-meta">Sep 16, 2022 · 1 min read</p>
+        <p class="card-meta post-origin">Originally published on
+          <a href="https://www.ibrahimbabashov.com/2022/09/git.html" rel="noopener" target="_blank">ibrahimbabashov.com (Blogger)</a>
+        </p>
+      </header>
+
+      <div class="post-content">
+<div style="text-align: left;">&nbsp;</div><div style="text-align: left;"><br /></div><div style="text-align: left;">To share this code with your teammates, you’ll want to create a shared Git repository that you can all access. One way to do this is to use GitHub. Head over to github.com, create an account if you don’t have one already, and create a new repository. Configure your local Git repository to use the new GitHub repository as a remote endpoint named origin as follows:<br />git remote add origin git@github.com:&lt;YOUR_USERNAME&gt;/&lt;YOUR_REPO_NAME&gt;.git</div><div style="text-align: left;">git push origin main</div><div style="text-align: left;">git pull origin main</div><div style="text-align: left;"><br /></div><div style="text-align: left;"># Create local repo server</div><div style="text-align: left;">#git init --bare&nbsp;</div><div style="text-align: left;"><br /></div><div style="text-align: left;">change remote repo url:</div><div style="text-align: left;"><pre class="lang-sh s-code-block"><code class="hljs language-bash">git remote -v
+<span class="hljs-comment"># View existing remotes</span>
+<span class="hljs-comment"># origin  https://github.com/user/repo.git (fetch)</span>
+<span class="hljs-comment"># origin  https://github.com/user/repo.git (push)</span>
+
+git remote set-url origin https://github.com/user/repo2.git
+<span class="hljs-comment"># Change the 'origin' remote's URL</span>
+
+git remote -v
+<span class="hljs-comment"># Verify new remote URL</span>
+<span class="hljs-comment"># origin  https://github.com/user/repo2.git (fetch)</span>
+<span class="hljs-comment"># origin  https://github.com/user/repo2.git (push)</span></code></pre><pre class="lang-sh s-code-block"><code class="hljs language-bash"><span class="hljs-comment"><br /></span></code></pre><pre class="lang-sh s-code-block"><code class="hljs language-bash"><span class="hljs-comment">Git reset &amp; revert:</span></code></pre><pre class="lang-sh s-code-block"><code class="hljs language-bash"><span class="hljs-comment"># restore and revert:</span></code></pre><p style="text-align: left;"><code class="hljs language-bash"><span class="hljs-comment">#git log --oneline</span></code><br /><code class="hljs language-bash"><span class="hljs-comment">#git revert commit_hash</span></code><br /></p><div style="text-align: left;"><code class="hljs language-bash"><span class="hljs-comment">#git restore -s commit_hash file(s)<br /></span></code><code class="hljs language-bash"><span class="hljs-comment">#git reflog</span></code></div><p></p><pre class="lang-sh s-code-block"><code class="hljs language-bash"><span class="hljs-comment">https://www.atlassian.com/git/tutorials/learn-undoing-changes-with-bitbucket</span></code></pre></div>
+      </div>
+
+      <p class="post-back"><a href="../blog.html" class="link-arrow">← Back to all posts</a></p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Ibrahim Babashov. Built by hand with plain HTML, CSS &amp; JS.</p>
+      <div class="footer-links">
+        <a href="mailto:hello@ibrahimbabashov.com">Email</a>
+        <a href="https://github.com/" rel="noopener" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/" rel="noopener" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

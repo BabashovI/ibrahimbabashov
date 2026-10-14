@@ -331,6 +331,79 @@ h2 { font-size: 1.5rem; }
 .post p, .post li { color: var(--text-muted); }
 .post strong { color: var(--text); }
 
+.post-origin { margin-top: 0.4rem; }
+
+.post-back { margin-top: 3rem; }
+
+/* Content migrated from Blogger */
+.post-content {
+  font-size: 1rem;
+  overflow-wrap: break-word;
+}
+
+.post-content p { margin: 0 0 1rem; }
+.post-content h1, .post-content h2, .post-content h3 { color: var(--text); }
+.post-content a { word-break: break-word; }
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  margin: 1rem 0;
+}
+
+.post-content pre {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.9rem 1.1rem;
+  overflow-x: auto;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.post-content code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 0.1em 0.4em;
+}
+
+.post-content pre code {
+  border: none;
+  padding: 0;
+  background: none;
+  font-size: 1em;
+}
+
+.post-content blockquote {
+  margin: 1.2rem 0;
+  padding: 0.4rem 1.2rem;
+  border-left: 3px solid var(--accent);
+  color: var(--text-muted);
+}
+
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2rem 0;
+  font-size: 0.95rem;
+}
+
+.post-content th,
+.post-content td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.post-content th { background: var(--bg-raised); }
+
+.post-content ul, .post-content ol { padding-left: 1.4rem; }
+
 /* ---------- Footer ---------- */
 
 .site-footer {

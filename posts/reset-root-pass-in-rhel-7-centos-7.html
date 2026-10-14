@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How To Reset root pass in RHEL 7 &amp; CentOS 7 — Ibrahim Babashov</title>
+  <meta name="description" content="Hi every one in this post i will show you, how to reset forgot root password in RHEL_7 &amp; CentOS_7 . Short record of the prosses i will post later. In previous…">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="../index.html" class="brand">ibrahimbabashov<span class="brand-dot">.com</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../blog.html" aria-current="page">Blog</a></li>
+        <li><a href="../contact.html" class="btn btn-sm">Contact</a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <article class="page container post">
+      <header class="post-header">
+        <h1>How To Reset root pass in RHEL 7 &amp; CentOS 7</h1>
+        <p class="card-meta">Jun 05, 2019 · 1 min read · CentOS, mount, passwd, password, RedHat, reset, touch</p>
+        <p class="card-meta post-origin">Originally published on
+          <a href="https://www.ibrahimbabashov.com/2019/06/reset-root-pass-in-rhel-7-centos-7.html" rel="noopener" target="_blank">ibrahimbabashov.com (Blogger)</a>
+        </p>
+      </header>
+
+      <div class="post-content">
+<div style="text-align: justify;">
+&nbsp;&nbsp;&nbsp;</div>
+<div style="text-align: justify;">
+&nbsp;&nbsp;&nbsp; Hi every one in this post i will show you, how to reset&nbsp; forgot root password in RHEL_7 &amp; CentOS_7 . Short record of the prosses i will post later.</div>
+<div style="text-align: justify;">
+&nbsp;&nbsp;&nbsp; In previous post i used "init=/bin/sh" for resetting but now i will show another way of resetting root pass. Let's begin</div>
+<div style="text-align: justify;">
+&nbsp; &nbsp;&nbsp; First in grub loader menu tab&nbsp; 'e'&nbsp; enter edit boot options from here go to line beginig with 'linux16' in this line delete words 'rhgb', 'quite' and add&nbsp;</div>
+<div style="text-align: justify;">
+'rd.break' press 'Ctrl+x'&nbsp; and we boot in emergency mode where system mount to "sysroot" . Enter below commands:</div>
+<ol>
+<li>mount -o remount,rw /sysroot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;"> #remount as read write /sysroot</span></li>
+<li>chroot /sysroot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: blue;">#change root folder to sysroot</span></li>
+<li>passwd &nbsp; <span style="color: blue;">#for resetting root password</span></li>
+<li>touch /.autorelabel &nbsp; &nbsp; &nbsp; &nbsp; <span style="color: blue;">#for selinux&nbsp;&nbsp;</span></li>
+<li>exit&nbsp;&nbsp;&nbsp; <span style="color: blue;">#twice enter exit</span></li>
+</ol>
+&nbsp; &nbsp; After above steps, you will success reset root password.&nbsp; <br />
+<div style="text-align: justify;">
+<br /></div>
+
+      </div>
+
+      <p class="post-back"><a href="../blog.html" class="link-arrow">← Back to all posts</a></p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Ibrahim Babashov. Built by hand with plain HTML, CSS &amp; JS.</p>
+      <div class="footer-links">
+        <a href="mailto:hello@ibrahimbabashov.com">Email</a>
+        <a href="https://github.com/" rel="noopener" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/" rel="noopener" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
